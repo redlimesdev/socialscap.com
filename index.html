@@ -590,7 +590,12 @@ function setLang(lang) {
   localStorage.setItem('sc_lang', lang);
 }
 const saved = localStorage.getItem('sc_lang');
-if (saved) setLang(saved);
+if (saved) {
+  setLang(saved);
+} else {
+  const browserLang = navigator.language || navigator.userLanguage;
+  setLang(browserLang.startsWith('nl') ? 'nl' : 'en');
+}
 </script>
 </body>
 </html>
