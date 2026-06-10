@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SocialsCap — Cap your time spent on Socials</title>
+<title>SocialsCap — Take back your time</title>
 <meta name="description" content="Set daily time limits on social apps. No accounts. No data collected or shared. Free to try on Android.">
 <link rel="icon" type="image/png" href="socialscap_512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -437,6 +437,9 @@ span[data-lang] { display: none; }
 .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.3); }
 
 /* ONBOARDING VIDEO */
+.lang-en .video-wrap[data-lang="nl"] { display: none !important; }
+.lang-nl .video-wrap[data-lang="en"] { display: none !important; }
+
 .video-wrap {
   margin-top: 32px;
   max-width: 360px;
@@ -808,7 +811,13 @@ span[data-lang] { display: none; }
   <p class="sec-body" data-lang="en">SocialsCap needs 4 Android permissions to work. This short video walks you through each one — what it does, why it's needed, and how to enable it. Nothing unexpected.</p>
   <p class="sec-body" data-lang="nl">SocialsCap heeft 4 Android-rechten nodig om te werken. Deze korte video laat je zien wat elk recht doet, waarom het nodig is en hoe je het inschakelt. Geen verrassingen.</p>
 
-  <div class="video-wrap">
+  <div class="video-wrap" data-lang="en">
+    <video controls playsinline preload="metadata">
+      <source src="socialscap_onboarding_en.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="video-wrap" data-lang="nl">
     <video controls playsinline preload="metadata">
       <source src="socialscap_onboarding.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -876,7 +885,7 @@ span[data-lang] { display: none; }
 <div class="privacy-sec">
   <div class="privacy-inner">
     <h2 data-lang="en">Zero data. Zero tracking. Zero ads.<br>Zero compromise.</h2>
-    <h2 data-lang="nl">Geen data. Geen tracking. <br>Geen advertenties.<br>Geen compromis.</h2>
+    <h2 data-lang="nl">Nul data. Nul tracking. Geen advertenties.<br>Nul compromis.</h2>
     <p data-lang="en">SocialsCap does not collect, transmit, or share any personal data. Everything: usage times, limits, your PIN etc stays on your device. No servers. No cloud. No analytics. Our business model is the Premium app, not your data.</p>
     <p data-lang="nl">SocialsCap verzamelt, verstuurt of deelt geen persoonsgegevens. Alles, gebruikstijden, limieten, je pincode etc blijft op je apparaat. Geen servers. Geen cloud. Geen analytics. Ons verdienmodel is de Premium app, niet jouw data.</p>
     <a href="privacy.html" class="privacy-link" target="_blank" data-lang="en">Read the full privacy policy →</a>
