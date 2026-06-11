@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SocialsCap — Take back your time</title>
-<meta name="description" content="Set daily time limits on social apps. No accounts. No data collected or shared. Free to try on Android.">
+<meta name="description" content="Set daily time limits on social apps. No accounts. No data collected or shared. No ads. Free to try on Android.">
 <meta property="og:title" content="SocialsCap — Take back your time">
-<meta property="og:description" content="Set daily time limits on social apps. No accounts. No data collected. Free on Android.">
+<meta property="og:description" content="Set daily time limits on social apps. No accounts. No data collected. No ads. Free on Android.">
 <meta property="og:image" content="socialscap_512.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -56,12 +56,6 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .zero-stmt h2 span { color: var(--blue); }
 .zero-stmt p { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); max-width: 640px; margin: 0 auto; line-height: 1.7; }
 
-/* RECOGNITION COPY */
-.recog { text-align: center; padding: 72px 40px 76px; border-bottom: 1px solid var(--border); }
-.recog p { font-size: clamp(20px, 2.2vw, 32px); font-weight: 500; color: var(--text); max-width: 760px; margin: 0 auto 22px; line-height: 1.55; }
-.recog p em { font-style: normal; color: var(--blue); font-weight: 600; }
-.recog .recog-cta { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); font-weight: 400; }
-
 /* ILLUSTRATIONS SLIDESHOW */
 .ill-section { padding: 68px 40px 56px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; }
 .ill-stage { position: relative; height: 420px; width: min(680px, 90vw); margin-bottom: 20px; }
@@ -76,7 +70,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .sec-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 11px; }
 .sec-title { font-size: clamp(26px, 3vw, 42px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
 .sec-body { font-size: 17px; color: var(--muted); margin-top: 10px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
 .step { background: var(--off); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; }
 .step-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; background: var(--blue); color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 16px; flex-shrink: 0; }
 .step h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
@@ -143,7 +137,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 
 /* ANDROID BANNER */
 .android-banner { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--off); padding: 14px 40px; }
-.android-banner p { max-width: 1100px; margin: 0 auto; font-size: 14px; color: var(--muted); }
+.android-banner p { max-width: 1100px; margin: 0 auto; font-size: 14px; color: var(--muted); text-align: center; }
 .android-banner a { color: var(--blue); text-decoration: none; font-weight: 500; }
 .android-banner a:hover { text-decoration: underline; }
 
@@ -244,10 +238,18 @@ span[data-lang] { display: none; }
   <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="btn-primary" target="_blank" rel="noopener">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83 1-.99 1.45-.45l14 8.5a.5.5 0 010 .9l-14 8.5C3.99 21.5 3 21.33 3 20.5z"/></svg>
     <span data-lang="en">Get it on Google Play</span>
-    <span data-lang="nl">Haal het op Google Play</span>
+    <span data-lang="nl">Installeer via Google Play</span>
   </a>
-  <span class="hero-note" data-lang="en">Free · No accounts · No data collected · Android 8+</span>
-  <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Android 8+</span>
+  <span class="hero-note" data-lang="en">Free · No accounts · No data collected · No ads · Android 8+</span>
+  <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Geen advertenties · Android 8+</span>
+</div>
+
+<!-- ZERO STATEMENT -->
+<div class="zero-stmt">
+  <h2 data-lang="en">Zero data. Zero tracking. Zero ads.<br><span>Zero compromise.</span></h2>
+  <h2 data-lang="nl">Geen data. Geen tracking. Geen advertenties.<br><span>Geen compromis.</span></h2>
+  <p data-lang="en">SocialsCap does not collect, transmit, or share any personal data.<br> Everything stays on your device.<br> No servers, no cloud, no analytics, no ads.<br> Our business model is the €3.99 Premium upgrade, not your data.</p>
+  <p data-lang="nl">SocialsCap verzamelt, verstuurt of deelt geen persoonsgegevens.<br> Alles blijft op je apparaat.<br> Geen servers, geen cloud, geen analytics, geen advertenties.<br> Ons verdienmodel is de €3,99 Premium upgrade, niet jouw data.</p>
 </div>
 
 <!-- ILLUSTRATIONS SLIDESHOW -->
@@ -268,26 +270,10 @@ span[data-lang] { display: none; }
   </div>
 </div>
 
-<!-- RECOGNITION COPY -->
-<div class="recog">
-  <p data-lang="en">Scrolling at the playground while your kids call your name. Phones face-up at every dinner. One last check before bed — again. Drifting from real conversations into a feed that never ends.</p>
-  <p data-lang="nl">Scrollen op de speeltuin terwijl je kinderen je naam roepen. Telefoon op tafel bij elk diner. Nog even snel checken voor het slapen — weer. Steeds minder aanwezig in de échte momenten die tellen.</p>
-  <p class="recog-cta" data-lang="en"><em>SocialsCap</em> gives you a simple daily limit — and actually enforces it.</p>
-  <p class="recog-cta" data-lang="nl"><em>SocialsCap</em> geeft je een eenvoudige daglimiet — en houdt je er ook echt aan.</p>
-</div>
-
-<!-- ZERO STATEMENT -->
-<div class="zero-stmt">
-  <h2 data-lang="en">Zero data. Zero tracking. Zero ads.<br><span>Zero compromise.</span></h2>
-  <h2 data-lang="nl">Nul data. Nul tracking. Geen advertenties.<br><span>Nul compromis.</span></h2>
-  <p data-lang="en">SocialsCap does not collect, transmit, or share any personal data. Everything stays on your device — no servers, no cloud, no analytics. Our business model is the €3.99 Premium upgrade, not your data.</p>
-  <p data-lang="nl">SocialsCap verzamelt, verstuurt of deelt geen persoonsgegevens. Alles blijft op je apparaat — geen servers, geen cloud, geen analytics. Ons verdienmodel is de €3,99 Premium upgrade, niet jouw data.</p>
-</div>
-
 <!-- HOW IT WORKS -->
 <div class="steps-sec">
-  <h2 class="sec-title" data-lang="en">Just give it a try. See if it works.</h2>
-  <h2 class="sec-title" data-lang="nl">Probeer het gewoon uit. Ervaar of het werkt.</h2>
+  <h2 class="sec-title" data-lang="en">Just give it a try. <br>See if it works.</h2>
+  <h2 class="sec-title" data-lang="nl">Probeer het gewoon uit. <br>Ervaar of het werkt.</h2>
 
   <div class="steps" data-lang="en">
     <div class="step">
@@ -295,15 +281,20 @@ span[data-lang] { display: none; }
       <h3>Set your daily limit</h3>
       <p>Choose the maximum minutes per day for your selected socials — from 15 minutes to 2 hours in total.</p>
     </div>
-    <div class="step">
+     <div class="step">
       <div class="step-num">2</div>
-      <h3>SocialsCap guards</h3>
-      <p>When the daily limit is reached, all guarded apps are blocked.</p>
+      <h3>Add apps to monitor</h3>
+      <p>Add all apps to SocialsCap for which you want their online time to be limited.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
+      <h3>SocialsCap guards</h3>
+      <p>As soon as the daily limit has been reached, all guarded apps are blocked.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
       <h3>Get serious with PIN</h3>
-      <p>Can't resist extending your limit? <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" target="_blank" rel="noopener">Upgrade for €3.99</a> and have a friend set a secret PIN — then the real challenge begins.</p>
+      <p>Can't resist extending your limit? <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" target="_blank" rel="noopener">Upgrade for €3.99</a> and have a friend set a secret PIN. The real challenge begins!</p>
     </div>
   </div>
 
@@ -315,13 +306,18 @@ span[data-lang] { display: none; }
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <h3>SocialsCap waakt</h3>
-      <p>Zodra de dagelijkse limiet bereikt is, worden alle bewaakte apps geblokkeerd.</p>
+      <h3>Voeg apps toe om te monitoren</h3>
+      <p>Voeg alle apps aan SocialsCap toe waarvan je wilt dat deze qua online tijd gelimmiteerd worden.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
+      <h3>SocialsCap waakt</h3>
+      <p>Zodra de dagelijkse limiet is bereikt, worden alle beveiligde apps geblokkeerd.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
       <h3>Pak het serieus aan met PIN</h3>
-      <p>Wanneer je de verleiding niet kunt weerstaan jouw limiet steeds weer te verlengen? <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" target="_blank" rel="noopener">Upgrade voor €3,99</a> en laat een vriend een geheime PIN instellen — waarna de echte uitdaging begint.</p>
+      <p>Wanneer je de verleiding niet kunt weerstaan jouw limiet steeds weer te verlengen? <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" target="_blank" rel="noopener">Upgrade voor €3,99</a> en laat een vriend een geheime PIN instellen. De echte uitdaging begint!</p>
     </div>
   </div>
 </div>
@@ -340,13 +336,13 @@ span[data-lang] { display: none; }
     <div class="ss-thumb" onclick="openLightbox(0,'en')"><div class="ss-mini"><img src="ss_main_en.png" alt="Main screen"></div><p class="ss-label">Main screen</p></div>
     <div class="ss-thumb" onclick="openLightbox(1,'en')"><div class="ss-mini"><img src="ss_bedtime_en.png" alt="Bedtime schedule"></div><p class="ss-label">Bedtime schedule</p></div>
     <div class="ss-thumb" onclick="openLightbox(2,'en')"><div class="ss-mini"><img src="ss_limit_en.png" alt="Daily limit"></div><p class="ss-label">Daily limit</p></div>
-    <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><img src="ss_pin_en.png" alt="PIN access guard"></div><p class="ss-label">PIN access guard</p></div>
+    <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><img src="ss_pin_en.png" alt="PIN access guard"></div><p class="ss-label">PIN access guard (upgrade)</p></div>
   </div>
   <div class="ss-grid" data-lang="nl">
     <div class="ss-thumb" onclick="openLightbox(0,'nl')"><div class="ss-mini"><img src="ss_main_nl.png" alt="Hoofdscherm"></div><p class="ss-label">Hoofdscherm</p></div>
     <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><img src="ss_bedtime_nl.png" alt="Bedtijdschema"></div><p class="ss-label">Bedtijdschema</p></div>
     <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><img src="ss_limit_nl.png" alt="Daglimiet"></div><p class="ss-label">Daglimiet</p></div>
-    <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging</p></div>
+    <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
   </div>
   </div>
 </div>
@@ -372,10 +368,10 @@ span[data-lang] { display: none; }
 <div class="video-sec">
   <p class="sec-label" data-lang="en">Getting started</p>
   <p class="sec-label" data-lang="nl">Aan de slag</p>
-  <h2 class="sec-title" data-lang="en">Onboarding takes about 2 minutes.</h2>
-  <h2 class="sec-title" data-lang="nl">Installatie duurt ongeveer 2 minuten.</h2>
-  <p class="sec-body" data-lang="en">SocialsCap needs 4 Android permissions to work. This short video walks you through each one — what it does, why it's needed, and how to enable it. <strong>No data collected or shared.</strong></p>
-  <p class="sec-body" data-lang="nl">SocialsCap heeft 4 Android-rechten nodig om te werken. Deze korte video laat zien wat elk recht doet, waarom het nodig is en hoe je het instelt. <strong>Geen data verzameld of gedeeld.</strong></p>
+  <h2 class="sec-title" data-lang="en">Onboarding takes a maximun of 2 minutes.</h2>
+  <h2 class="sec-title" data-lang="nl">Installatie duurt maximaal 2 minuten.</h2>
+  <p class="sec-body" data-lang="en">SocialsCap needs 4 Android permissions to work.<br> Watch what each permission does, why it's needed, and how to enable it.<br>Click on the video to start and pause if necessary, should it go a bit fast.<br> <strong>No data collected or shared.</strong></p>
+  <p class="sec-body" data-lang="nl">SocialsCap heeft 4 Android-rechten nodig om te werken.<br> Bekijk wat elk recht doet, waarom het nodig is en hoe je het instelt.<br>Klik op de video om te starten en evententueel te pauzeren, mocht het wat snel gaan.<br> <strong>Geen data verzameld of gedeeld.</strong></p>
   <div class="video-wrap" data-lang="en">
     <video controls playsinline preload="none" id="vid-en"></video>
   </div>
@@ -397,7 +393,8 @@ span[data-lang] { display: none; }
     <!-- FREE -->
     <div class="price-card">
       <h3 data-lang="en">Free</h3><h3 data-lang="nl">Gratis</h3>
-      <div class="price-amount">€0</div>
+      <div class="price-amount" data-lang="en">$0</div>
+       <div class="price-amount" data-lang="nl">€0</div>
       <p class="price-period" data-lang="en">forever</p>
       <p class="price-period" data-lang="nl">voor altijd</p>
       <ul class="price-list">
@@ -416,19 +413,20 @@ span[data-lang] { display: none; }
       <span class="price-badge" data-lang="en">Get serious</span>
       <span class="price-badge" data-lang="nl">Pak het serieus aan</span>
       <h3 data-lang="en">Premium</h3><h3 data-lang="nl">Premium</h3>
-      <div class="price-amount">€3.99</div>
+      <div class="price-amount" data-lang="en">$3.99</div>
+       <div class="price-amount" data-lang="nl">€3.99</div>
       <p class="price-period" data-lang="en">one-time · no subscription</p>
       <p class="price-period" data-lang="nl">eenmalig · geen abonnement</p>
       <ul class="price-list">
         <li><span class="ck-b">✓</span><span data-lang="en">Everything in Free</span><span data-lang="nl">Alles uit Gratis</span></li>
-        <li><span class="ck-b">✓</span><span data-lang="en">A friend sets a secret PIN — limits can't be extended without it</span><span data-lang="nl">Een vriend stelt een geheime PIN in — limieten zijn daarna niet meer te verlengen</span></li>
-        <li><span class="ck-b">✓</span><span data-lang="en">SocialsCap can't be uninstalled to get around the block</span><span data-lang="nl">SocialsCap kan niet verwijderd worden om de blokkering te omzeilen</span></li>
+        <li><span class="ck-b">✓</span><span data-lang="en">A friend sets a secret PIN for you. Limits can't be extended without it</span><span data-lang="nl">Een vriend stelt een voor jou geheime PIN in. De limieten zijn daarna niet meer te verlengen</span></li>
+        <li><span class="ck-b">✓</span><span data-lang="en">SocialsCap can't be uninstalled without PIN to get around the block</span><span data-lang="nl">SocialsCap kan zonder PIN niet verwijderd worden om de blokkering te omzeilen</span></li>
       </ul>
       <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="btn-blue" target="_blank" rel="noopener" data-lang="en">Download &amp; upgrade in-app</a>
       <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="btn-blue" target="_blank" rel="noopener" data-lang="nl">Download &amp; upgrade in-app</a>
     </div>
 
-    <!-- PIN SCREEN -->
+     <!-- PIN SCREEN -->
     <div class="pin-col">
       <div class="pin-frame">
         <img data-lang="en" src="ss_pin_en.png" alt="PIN protection screen">
@@ -459,6 +457,7 @@ span[data-lang] { display: none; }
     <span style="color:var(--muted)">© 2026 SocialsCap</span>
   </p>
 </footer>
+
 
 <script>
 // Video sources — injected only on production domain
