@@ -81,8 +81,9 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .divider { height: 1px; background: var(--border); }
 
 /* SCREENSHOTS */
-.ss-sec { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 76px 40px; }
-.ss-grid { display: flex; gap: 36px; margin-top: 44px; justify-content: center; flex-wrap: wrap; }
+.ss-sec { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 76px 0; }
+.ss-inner { max-width: 1060px; margin: 0 auto; padding: 0 40px; }
+.ss-grid { display: flex; gap: 36px; margin-top: 44px; justify-content: flex-start; flex-wrap: wrap; }
 .ss-thumb { text-align: center; cursor: pointer; transition: transform 0.2s; }
 .ss-thumb:hover { transform: translateY(-4px); }
 .ss-mini { border-radius: 24px; overflow: hidden; width: 228px; background: #10151D; box-shadow: 0 12px 40px rgba(16,21,29,0.16); transition: box-shadow 0.2s; }
@@ -142,7 +143,10 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 
 /* FOOTER */
 footer { padding: 26px 40px; text-align: center; border-top: 1px solid var(--border); }
-footer p { font-size: 13px; color: var(--muted); }
+footer p { font-size: 13px; color: var(--muted); text-align: center; }
+footer a[data-lang] { display: none; }
+.lang-en footer a[data-lang="en"] { display: inline; }
+.lang-nl footer a[data-lang="nl"] { display: inline; }
 footer a { color: var(--muted); text-decoration: none; }
 footer a:hover { color: var(--blue); }
 
@@ -177,7 +181,8 @@ span[data-lang] { display: none; }
   .steps-sec { padding: 68px 28px; }
   .steps { gap: 14px; }
   .steps .step { padding: 24px 20px; }
-  .ss-sec { padding: 64px 28px; }
+  .ss-sec { padding: 64px 0; }
+  .ss-inner { padding: 0 28px; }
   .video-sec { padding: 68px 28px; }
   .pricing-sec { padding: 68px 28px; }
   .pricing-grid { grid-template-columns: 1fr 1fr; }
@@ -223,7 +228,7 @@ span[data-lang] { display: none; }
 
   <div class="hero-phones">
     <div class="phone-frame">
-      <img src="uploads/widget_en.png" alt="SocialsCap home screen widget">
+      <img src="ss_widget_en.png" alt="SocialsCap home screen widget">
     </div>
     <div class="phone-frame">
       <img src="ss_blocked_en.png" alt="SocialsCap blocked screen">
@@ -311,8 +316,7 @@ span[data-lang] { display: none; }
 
 <!-- SCREENSHOTS -->
 <div class="ss-sec">
-  <p class="sec-label" data-lang="en">How it looks</p>
-  <p class="sec-label" data-lang="nl">Hoe het eruit ziet</p>
+  <div class="ss-inner">
   <h2 class="sec-title" data-lang="en">Intuitive, easy to set up.</h2>
   <h2 class="sec-title" data-lang="nl">Intuitief, gemakkelijk in te stellen.</h2>
   <p class="sec-body" data-lang="en">Tap any screenshot for a closer look.</p>
@@ -329,6 +333,7 @@ span[data-lang] { display: none; }
     <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><img src="ss_bedtime_nl.png" alt="Bedtijdschema"></div><p class="ss-label">Bedtijdschema</p></div>
     <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><img src="ss_limit_nl.png" alt="Daglimiet"></div><p class="ss-label">Daglimiet</p></div>
     <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging</p></div>
+  </div>
   </div>
 </div>
 
