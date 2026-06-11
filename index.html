@@ -40,10 +40,11 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .lang-btn:hover, .lang-btn.active { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
 
 /* HERO */
-.hero { text-align: center; padding: 88px 40px 80px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; }
+.hero { border-bottom: 1px solid var(--border); }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 88px 40px 80px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
 .hero h1 { font-size: clamp(52px, 6.5vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 22px; }
 .hero-sub { font-size: clamp(17px, 1.8vw, 26px); color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
-.hero-phones { display: flex; gap: 24px; justify-content: center; align-items: flex-start; margin-bottom: 44px; }
+.hero-phones { display: flex; gap: 24px; justify-content: flex-start; align-items: flex-start; margin-bottom: 44px; }
 .phone-frame { background: #10151D; border-radius: 36px; padding: 11px; width: 236px; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; }
 .phone-frame img { width: 100%; display: block; border-radius: 27px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
@@ -51,16 +52,19 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .hero-note { display: block; margin-top: 13px; font-size: 14px; color: var(--muted); }
 
 /* ZERO STATEMENT */
-.zero-stmt { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; padding: 68px 40px; }
+.zero-stmt { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: left; padding: 68px 0; }
+.zero-stmt-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 .zero-stmt h2 { font-size: clamp(26px, 3.2vw, 46px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 18px; }
 .zero-stmt h2 span { color: var(--blue); }
-.zero-stmt p { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+.zero-stmt p { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); max-width: 640px; line-height: 1.7; }
 
 /* RECOGNITION COPY */
-.recog { text-align: left; padding: 72px 40px 76px; border-bottom: 1px solid var(--border); }
-.recog p { font-size: clamp(14px, 2.2vw, 32px); font-weight: 300; color: var(--text); max-width: 760px; margin: 0 auto 22px; line-height: 1.55; }
+.recog { text-align: left; padding: 72px 0 76px; border-bottom: 1px solid var(--border); }
+.recog-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+.recog p { font-size: clamp(18px, 1.5vw, 22px); font-weight: 400; color: var(--text); max-width: 680px; margin: 0 0 16px; line-height: 1.65; }
+.recog p strong { font-weight: 700; color: var(--text); }
 .recog p em { font-style: normal; color: var(--blue); font-weight: 600; }
-.recog .recog-cta { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); font-weight: 400; }
+.recog .recog-cta { font-size: clamp(16px, 1.3vw, 19px); color: var(--muted); font-weight: 400; margin-top: 8px; }
 
 /* ILLUSTRATIONS SLIDESHOW */
 .ill-section { padding: 68px 40px 56px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; }
@@ -88,7 +92,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 
 /* SCREENSHOTS */
 .ss-sec { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 76px 0; }
-.ss-inner { max-width: 1060px; margin: 0 auto; padding: 0 40px; }
+.ss-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 .ss-grid { display: flex; gap: 36px; margin-top: 44px; justify-content: flex-start; flex-wrap: wrap; }
 .ss-thumb { text-align: center; cursor: pointer; transition: transform 0.2s; }
 .ss-thumb:hover { transform: translateY(-4px); }
@@ -180,12 +184,15 @@ span[data-lang] { display: none; }
 /* RESPONSIVE */
 @media (max-width: 960px) {
   nav { padding: 0 28px; }
-  .hero { padding: 72px 28px 64px; }
-  .zero-stmt { padding: 56px 28px; }
+  .hero-inner { padding: 72px 28px 64px; }
+  .zero-stmt { padding: 56px 0; }
+  .zero-stmt-inner { padding: 0 28px; }
+  .recog { padding: 56px 0 60px; }
+  .recog-inner { padding: 0 28px; }
   .ill-section { padding: 56px 28px 48px; }
   .ill-stage { height: 340px; }
   .steps-sec { padding: 68px 28px; }
-  .steps { gap: 14px; }
+  .steps { gap: 14px; grid-template-columns: 1fr 1fr; }
   .steps .step { padding: 24px 20px; }
   .ss-sec { padding: 64px 0; }
   .ss-inner { padding: 0 28px; }
@@ -195,9 +202,6 @@ span[data-lang] { display: none; }
   .pin-col { display: none; }
   .android-banner { padding: 14px 28px; }
   footer { padding: 24px 28px; }
-}
-@media (max-width: 960px) {
-  .steps { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
   .hero-phones { gap: 14px; }
@@ -228,6 +232,7 @@ span[data-lang] { display: none; }
 
 <!-- HERO -->
 <div class="hero">
+<div class="hero-inner">
   <h1>Cap your Socials.</h1>
   <p class="hero-sub" data-lang="en">Get a grip on your time spent on social media.</p>
   <p class="hero-sub" data-lang="nl">Krijg grip op de tijd die je besteedt aan sociale media.</p>
@@ -248,6 +253,7 @@ span[data-lang] { display: none; }
   </a>
   <span class="hero-note" data-lang="en">Free · No accounts · No data collected · No ads · Android 8+</span>
   <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Geen advertenties · Android 8+</span>
+</div>
 </div>
 
 <!-- ILLUSTRATIONS SLIDESHOW -->
@@ -270,18 +276,22 @@ span[data-lang] { display: none; }
 
 <!-- RECOGNITION COPY -->
 <div class="recog">
+<div class="recog-inner">
   <p data-lang="en">Scrolling at the playground while your kids deserve all your attention. Drifting from real conversations into a feed that never ends. Endlessly scrolling through funny posts deep into the night.<br><strong>Put yourself on a social media diet.</strong></p>
   <p data-lang="nl">Scrollen op het schoolplein terwijl je kinderen al je aandacht verdienen. Afdwalen van echte gesprekken naar een eindeloze feed. Eindeloos scrollen door grappige berichten tt diep om de nacht. <br><strong>Zet jezelf op een social media dieet.</strong></p>
   <p class="recog-cta" data-lang="en"><em>SocialsCap</em> gives you a simple daily limit — and actually enforces it.</p>
   <p class="recog-cta" data-lang="nl"><em>SocialsCap</em> geeft je een eenvoudige daglimiet — en houdt je er ook echt aan.</p>
 </div>
+</div>
 
 <!-- ZERO STATEMENT -->
 <div class="zero-stmt">
+<div class="zero-stmt-inner">
   <h2 data-lang="en">Zero data. Zero tracking. Zero ads.<br><span>Fully in control yourself.</span></h2>
   <h2 data-lang="nl">Geen data. Geen tracking. Geen advertenties.<br><span>Je hebt de volledige controle.</span></h2>
   <p data-lang="en">SocialsCap does not collect, transmit, or share any personal data.<br>Everything stays on your device.<br>No servers, no cloud, no analytics, no ads.<br>Our business model is the €3.99 Premium upgrade, not your data.</p>
   <p data-lang="nl">SocialsCap verzamelt, verstuurt of deelt geen persoonsgegevens.<br>Alles blijft op je apparaat.<br>Geen servers, geen cloud, geen analytics, geen advertenties.<br>Ons verdienmodel is de €3,99 Premium upgrade, niet jouw data.</p>
+</div>
 </div>
 
 <!-- HOW IT WORKS -->
