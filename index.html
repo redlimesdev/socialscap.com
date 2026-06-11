@@ -59,7 +59,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .zero-stmt p { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); max-width: 640px; line-height: 1.7; }
 
 /* RECOGNITION COPY */
-.recog { text-align: left; padding: 72px 0 76px; border-bottom: 1px solid var(--border); }
+.recog { text-align: left; padding: 28px 0 76px; border-bottom: 1px solid var(--border); }
 .recog-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 .recog p { font-size: clamp(18px, 1.5vw, 22px); font-weight: 400; color: var(--text); max-width: 680px; margin: 0 0 16px; line-height: 1.65; }
 .recog p strong { font-weight: 700; color: var(--text); }
@@ -67,7 +67,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .recog .recog-cta { font-size: clamp(16px, 1.3vw, 19px); color: var(--muted); font-weight: 400; margin-top: 8px; }
 
 /* ILLUSTRATIONS SLIDESHOW */
-.ill-section { padding: 68px 40px 56px; display: flex; flex-direction: column; align-items: center; }
+.ill-section { padding: 68px 40px 24px; display: flex; flex-direction: column; align-items: center; }
 .ill-stage { position: relative; height: 420px; width: min(680px, 90vw); margin-bottom: 20px; }
 .ill-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.85s ease; pointer-events: none; }
 .ill-slide.active { opacity: 1; }
@@ -187,11 +187,11 @@ span[data-lang] { display: none; }
   .hero-inner { padding: 72px 28px 64px; }
   .zero-stmt { padding: 56px 0; }
   .zero-stmt-inner { padding: 0 28px; }
-  .recog { padding: 56px 0 60px; }
-  .recog-inner { padding: 0 28px; }
-  .ill-section { padding: 56px 28px 48px; }
-  .ill-stage { height: 340px; }
   .steps-sec { padding: 68px 28px; }
+  .recog-inner { padding: 0 28px; }
+  .ill-section { padding: 56px 28px 16px; }
+  .ill-stage { height: 340px; }
+  .recog { padding: 20px 0 60px; }
   .steps { gap: 14px; grid-template-columns: 1fr 1fr; }
   .steps .step { padding: 24px 20px; }
   .ss-sec { padding: 64px 0; }
@@ -208,7 +208,7 @@ span[data-lang] { display: none; }
   .hero-phones { gap: 14px; }
   .phone-frame { width: 43vw; max-width: 170px; border-radius: 28px; padding: 8px; }
   .phone-frame img { border-radius: 22px; }
-  .ill-section { padding: 36px 20px 28px; }
+  .ill-section { padding: 36px 20px 12px; }
   .ill-stage { height: 260px; }
   .steps { grid-template-columns: 1fr; }
   .ss-grid { gap: 24px; }
