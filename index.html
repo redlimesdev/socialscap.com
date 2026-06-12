@@ -35,10 +35,14 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-brand img { width: 32px; height: 32px; border-radius: 7px; }
 .nav-brand span { font-weight: 700; font-size: 17px; color: var(--text); }
-.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-right { display: flex; align-items: center; gap: 16px; }
 .nav-research { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .nav-research:hover { color: var(--blue); }
-.nav-lang { display: flex; gap: 6px; }
+.lang-select { appearance: none; -webkit-appearance: none; background: none; border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 13px; font-weight: 600; padding: 5px 28px 5px 12px; border-radius: 20px; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235A6A7E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; transition: border-color 0.2s; }
+.lang-select:hover, .lang-select:focus { border-color: var(--blue); outline: none; }
+@media (max-width: 600px) {
+  .nav-research { display: none; }
+}
 .lang-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-family: inherit; font-size: 13px; font-weight: 500; padding: 4px 13px; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
 .lang-btn:hover, .lang-btn.active { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
 
@@ -233,10 +237,10 @@ span[data-lang] { display: none; }
     <div class="nav-right">
       <a class="nav-research" href="the-research.html" data-lang="en">The research →</a>
       <a class="nav-research" href="the-research.html" data-lang="nl">Het onderzoek →</a>
-      <div class="nav-lang">
-        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">NL</button>
-      </div>
+      <select class="lang-select" id="langSelect" onchange="setLang(this.value)" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="nl">NL</option>
+      </select>
     </div>
   </div>
 </nav>
@@ -513,8 +517,8 @@ span[data-lang] { display: none; }
 })();
 function setLang(lang) {
   document.body.className = 'lang-' + lang;
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+  var sel = document.getElementById('langSelect');
+  if (sel) sel.value = lang;
   localStorage.setItem('sc_lang', lang);
 }
 (function() {
