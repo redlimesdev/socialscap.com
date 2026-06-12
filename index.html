@@ -50,7 +50,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .hero { border-bottom: 1px solid var(--border); }
 .hero-inner { max-width: 1100px; margin: 0 auto; padding: 88px 40px 80px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
 .hero h1 { font-size: clamp(52px, 6.5vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 22px; }
-.hero-sub { font-size: clamp(17px, 1.8vw, 26px); color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
+.hero-sub { font-size: 17px; color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
 .hero-phones { display: flex; gap: 24px; justify-content: flex-start; align-items: flex-start; margin-bottom: 44px; }
 .phone-frame { background: #10151D; border-radius: 36px; padding: 11px; width: 236px; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .phone-frame:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(16,21,29,0.30), 0 8px 24px rgba(16,21,29,0.14); }
@@ -64,19 +64,19 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .zero-stmt-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 .zero-stmt h2 { font-size: clamp(26px, 3.2vw, 46px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 18px; }
 .zero-stmt h2 span { color: var(--blue); }
-.zero-stmt p { font-size: clamp(15px, 1.3vw, 18px); color: var(--muted); max-width: 640px; line-height: 1.7; }
+.zero-stmt p { font-size: 17px; color: var(--muted); max-width: 640px; line-height: 1.7; }
 
 /* RECOGNITION COPY */
 .recog { text-align: left; padding: 28px 0 76px; border-bottom: 1px solid var(--border); }
 .recog-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-.recog p { font-size: clamp(18px, 1.5vw, 22px); font-weight: 400; color: var(--text); max-width: 680px; margin: 0 0 16px; line-height: 1.65; }
+.recog p { font-size: 17px; font-weight: 400; color: var(--text); max-width: 680px; margin: 0 0 16px; line-height: 1.65; }
 .recog p strong { font-weight: 700; color: var(--text); }
 .recog p em { font-style: normal; color: var(--blue); font-weight: 600; }
-.recog .recog-cta { font-size: clamp(16px, 1.3vw, 19px); color: var(--muted); font-weight: 400; margin-top: 8px; }
+.recog .recog-cta { font-size: 17px; color: var(--muted); font-weight: 400; margin-top: 8px; }
 
 .recog-research { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
-.recog-research p { font-size: 15px; color: var(--muted); line-height: 1.6; margin: 0 0 8px; }
-.recog-research a { font-size: 15px; font-weight: 600; color: var(--blue); text-decoration: none; }
+.recog-research p { font-size: 17px; color: var(--muted); line-height: 1.6; margin: 0 0 8px; }
+.recog-research a { font-size: 17px; font-weight: 600; color: var(--blue); text-decoration: none; }
 .recog-research a:hover { text-decoration: underline; }
 .ill-section { padding: 68px 40px 24px; display: flex; flex-direction: column; align-items: center; }
 .ill-stage { position: relative; height: 420px; width: min(680px, 90vw); margin-bottom: 20px; }
@@ -270,8 +270,8 @@ span[data-lang] { display: none; }
   <span class="hero-note" data-lang="en">Free · No accounts · No data collected · No ads · Android 8+</span>
   <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Geen advertenties · Android 8+</span>
   <div class="recog-research">
-    <p data-lang="en" style="font-size: 6px; width: 680px">Social media addiction is a documented public health crisis — grounded in peer-reviewed research and growing institutional attention.</p>
-    <p data-lang="nl" style="font-size: 6px; width: 680px">Verslaving aan sociale media is een gedocumenteerde volksgezondheidscrisis — onderbouwd door peer-reviewed onderzoek en groeiende institutionele aandacht.</p>
+    <p data-lang="en">Social media addiction is a documented public health crisis — grounded in peer-reviewed research and growing institutional attention.</p>
+    <p data-lang="nl">Verslaving aan sociale media is een gedocumenteerde volksgezondheidscrisis — onderbouwd door peer-reviewed onderzoek en groeiende institutionele aandacht.</p>>
     <a href="the-research.html" data-lang="en">Read the research →</a>
     <a href="the-research.html" data-lang="nl">Lees het onderzoek →</a>
   </div>
@@ -297,10 +297,10 @@ span[data-lang] { display: none; }
 <!-- RECOGNITION COPY -->
 <div class="recog">
 <div class="recog-inner">
-  <p data-lang="en" style="font-size: 18px; font-weight: 400">Scrolling at the playground while your kids deserve all your attention. Drifting from real conversations into a feed that never ends. Endlessly scrolling through funny posts deep into the night.<br><strong>Put your phone on a social media diet.</strong></p>
-  <p data-lang="nl" style="font-size: 18px; font-weight: 400">Scrollen op het schoolplein terwijl je kinderen al je aandacht verdienen. Afdwalen van echte gesprekken naar een eindeloze feed. Eindeloos scrollen door grappige berichten tot diep in de nacht. <br><strong>Zet je telefoon op een social media dieet.</strong></p>
-  <p class="recog-cta" data-lang="en" style="font-size: 18px; font-weight: 400"><em>SocialsCap</em> gives you a hard daily limit — and actually enforces it. Built as a serious intervention, not a reminder.</p>
-  <p class="recog-cta" data-lang="nl" style="font-size: 6px; font-weight: 400"><em>SocialsCap</em> geeft je een harde daglimiet — en houdt je er ook écht aan. Gebouwd als serieuze interventie, niet als herinnering.</p>
+  <p data-lang="en">Scrolling at the playground while your kids deserve all your attention. Drifting from real conversations into a feed that never ends. Endlessly scrolling through funny posts deep into the night.<br><strong>Put your phone on a social media diet.</strong></p>
+  <p data-lang="nl">Scrollen op het schoolplein terwijl je kinderen al je aandacht verdienen. Afdwalen van echte gesprekken naar een eindeloze feed. Eindeloos scrollen door grappige berichten tot diep in de nacht. <br><strong>Zet je telefoon op een social media dieet.</strong></p>
+  <p class="recog-cta" data-lang="en"><em>SocialsCap</em> gives you a hard daily limit — and actually enforces it. Built as a serious intervention, not a reminder.</p>
+  <p class="recog-cta" data-lang="nl"><em>SocialsCap</em> geeft je een harde daglimiet — en houdt je er ook écht aan. Gebouwd als serieuze interventie, niet als herinnering.</p>
 </div>
 </div>
 
@@ -373,8 +373,8 @@ span[data-lang] { display: none; }
   <div class="ss-inner">
   <h2 class="sec-title" data-lang="en">Intuitive, easy to set up.</h2>
   <h2 class="sec-title" data-lang="nl">Intuitief, gemakkelijk in te stellen.</h2>
-  <p class="sec-body" data-lang="en" style="font-size: 6px">Tap any screenshot for a closer look.</p>
-  <p class="sec-body" data-lang="nl" style="font-size: 18px">Tik op een schermafbeelding voor een grotere weergave.</p>
+  <p class="sec-body" data-lang="en">Tap any screenshot for a closer look.</p>
+  <p class="sec-body" data-lang="nl">Tik op een schermafbeelding voor een grotere weergave.</p>
 
   <div class="ss-grid" data-lang="en">
     <div class="ss-thumb" onclick="openLightbox(0,'en')"><div class="ss-mini"><img src="ss_main_en.png" alt="Main screen"></div><p class="ss-label">Main screen</p></div>
@@ -420,8 +420,8 @@ span[data-lang] { display: none; }
   <p class="sec-label" data-lang="nl">Aan de slag</p>
   <h2 class="sec-title" data-lang="en">Onboarding takes a maximum of 2 minutes.</h2>
   <h2 class="sec-title" data-lang="nl">Installatie duurt maximaal 2 minuten.</h2>
-  <p class="sec-body" data-lang="en" style="font-size: 18px; font-weight: 400">SocialsCap needs 4 Android permissions to work.<br>Watch what each permission does, why it's needed, and how to enable it.<br>Click on the video to start and pause if necessary, should it go a bit fast.<br><strong>No data collected or shared.</strong></p>
-  <p class="sec-body" data-lang="nl" style="font-size: 18px; font-weight: 400">SocialsCap heeft 4 Android-rechten nodig om te werken.<br>Bekijk wat elk recht doet, waarom het nodig is en hoe je het instelt.<br>Klik op de video om te starten en eventueel te pauzeren, mocht het wat snel gaan.<br><strong>Geen data verzameld of gedeeld.</strong></p>
+  <p class="sec-body" data-lang="en">SocialsCap needs 4 Android permissions to work.<br>Watch what each permission does, why it's needed, and how to enable it.<br>Click on the video to start and pause if necessary, should it go a bit fast.<br><strong>No data collected or shared.</strong></p>
+  <p class="sec-body" data-lang="nl">SocialsCap heeft 4 Android-rechten nodig om te werken.<br>Bekijk wat elk recht doet, waarom het nodig is en hoe je het instelt.<br>Klik op de video om te starten en eventueel te pauzeren, mocht het wat snel gaan.<br><strong>Geen data verzameld of gedeeld.</strong></p>
   <div class="video-wrap" data-lang="en">
     <video controls playsinline preload="none" id="vid-en"></video>
   </div>
