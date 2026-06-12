@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Research — Social Media Addiction & SocialsCap's Mission</title>
+<meta name="description" content="Social media addiction is a documented public health crisis. SocialsCap is built as a serious intervention — grounded in research on dopamine loops, variable reward schedules, and the mental health impact of platform design.">
+<meta name="keywords" content="social media addiction, dopamine social media, screen time intervention, social media mental health, android social media blocker, digital wellbeing, social media brain, variable reward schedule">
+<meta property="og:title" content="The Research — Social Media Addiction & SocialsCap's Mission">
+<meta property="og:description" content="Social media addiction is a documented public health crisis. SocialsCap is built as a serious intervention, not a quick fix.">
+<meta property="og:image" content="socialscap_512.png">
+<link rel="icon" type="image/png" href="socialscap_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:   #2067B0;
+  --blue-dk:#174E8A;
+  --blue-lt:#EBF3FB;
+  --white:  #FFFFFF;
+  --off:    #F7F9FC;
+  --text:   #1A2332;
+  --muted:  #5A6A7E;
+  --border: #D8E4F0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+p, h1, h2, h3, h4 { text-wrap: pretty; }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 40px; }
+.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-brand img { width: 32px; height: 32px; border-radius: 7px; }
+.nav-brand span { font-weight: 700; font-size: 17px; color: var(--text); }
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-back { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; }
+.nav-back:hover { color: var(--blue); }
+.nav-lang { display: flex; gap: 6px; }
+.lang-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-family: inherit; font-size: 13px; font-weight: 500; padding: 4px 13px; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+.lang-btn:hover, .lang-btn.active { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
+
+/* HERO */
+.page-hero { border-bottom: 1px solid var(--border); }
+.page-hero-inner { max-width: 1100px; margin: 0 auto; padding: 80px 40px 72px; }
+.page-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+.page-hero h1 { font-size: clamp(34px, 4vw, 58px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 24px; max-width: 800px; }
+.page-hero p { font-size: clamp(16px, 1.4vw, 20px); color: var(--muted); max-width: 680px; line-height: 1.7; }
+
+/* INNER WRAPPER */
+.inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+/* SECTIONS */
+.sec { padding: 72px 0; border-bottom: 1px solid var(--border); }
+.sec:last-of-type { border-bottom: none; }
+.sec-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+.sec-title { font-size: clamp(24px, 2.8vw, 38px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 14px; }
+.sec-intro { font-size: clamp(15px, 1.2vw, 17px); color: var(--muted); max-width: 680px; line-height: 1.7; margin-bottom: 40px; }
+
+/* RESEARCH CARDS */
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.r-card { border: 1px solid var(--border); border-radius: 14px; padding: 28px 26px; background: #fff; display: flex; flex-direction: column; gap: 10px; transition: box-shadow 0.2s; }
+.r-card:hover { box-shadow: 0 6px 24px rgba(32,103,176,0.10); }
+.r-card a { text-decoration: none; color: inherit; }
+.r-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; background: var(--blue-lt); color: var(--blue); align-self: flex-start; }
+.r-card h3 { font-size: 17px; font-weight: 600; line-height: 1.35; }
+.r-card .r-author { font-size: 13px; color: var(--muted); font-weight: 500; }
+.r-card p { font-size: 14.5px; color: var(--muted); line-height: 1.6; flex: 1; }
+.r-link { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; margin-top: 4px; }
+.r-link:hover { text-decoration: underline; }
+.r-link svg { flex-shrink: 0; }
+
+/* STAT BAND */
+.stat-band { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 0; }
+.stat-band-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.stat { }
+.stat .num { font-size: clamp(36px, 4vw, 56px); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 10px; }
+.stat h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.stat p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.stat .source { font-size: 12px; color: #8A9AB0; margin-top: 8px; }
+
+/* INSTITUTIONS */
+.inst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.inst-card { border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; background: #fff; transition: box-shadow 0.2s; }
+.inst-card:hover { box-shadow: 0 6px 24px rgba(32,103,176,0.10); }
+.inst-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.inst-card p { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 12px; }
+.inst-card a { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; }
+.inst-card a:hover { text-decoration: underline; }
+
+/* PHILOSOPHY */
+.philosophy { background: var(--off); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.philosophy-inner { max-width: 1100px; margin: 0 auto; padding: 72px 40px; }
+.phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.phil-item { border-left: 3px solid var(--blue); padding: 20px 20px 20px 24px; background: #fff; border-radius: 0 10px 10px 0; }
+.phil-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.phil-item p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+/* CTA BAND */
+.cta-band { padding: 72px 0; }
+.cta-band-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+.cta-band h2 { font-size: clamp(22px, 2.4vw, 34px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; }
+.cta-band p { font-size: 17px; color: var(--muted); max-width: 560px; margin-bottom: 32px; line-height: 1.65; }
+.btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s; white-space: nowrap; }
+.btn-primary:hover { background: var(--blue-dk); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--blue); text-decoration: none; margin-left: 20px; }
+.btn-ghost:hover { text-decoration: underline; }
+
+/* FOOTER */
+footer { padding: 26px 40px; text-align: center; border-top: 1px solid var(--border); }
+footer p { font-size: 13px; color: var(--muted); text-align: center; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--blue); }
+
+/* LANGUAGE */
+[data-lang] { display: none; }
+.lang-en [data-lang="en"] { display: block; }
+.lang-nl [data-lang="nl"] { display: block; }
+span[data-lang] { display: none; }
+.lang-en span[data-lang="en"] { display: inline; }
+.lang-nl span[data-lang="nl"] { display: inline; }
+.lang-en .research-grid[data-lang="nl"] { display: none !important; }
+.lang-nl .research-grid[data-lang="en"] { display: none !important; }
+.lang-en .inst-grid[data-lang="nl"] { display: none !important; }
+.lang-nl .inst-grid[data-lang="en"] { display: none !important; }
+.lang-en .phil-grid[data-lang="nl"] { display: none !important; }
+.lang-nl .phil-grid[data-lang="en"] { display: none !important; }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .research-grid { grid-template-columns: 1fr; }
+  .inst-grid { grid-template-columns: 1fr 1fr; }
+  .phil-grid { grid-template-columns: 1fr; }
+  .stat-band-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 640px) {
+  nav { padding: 0 20px; }
+  .page-hero-inner { padding: 56px 20px 52px; }
+  .inner { padding: 0 20px; }
+  .stat-band-inner { padding: 0 20px; }
+  .philosophy-inner { padding: 56px 20px; }
+  .cta-band-inner { padding: 0 20px; }
+  .sec { padding: 52px 0; }
+  .inst-grid { grid-template-columns: 1fr; }
+  footer { padding: 24px 20px; }
+  .btn-ghost { display: block; margin: 16px 0 0; }
+}
+</style>
+</head>
+<body class="lang-en">
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="socialscap_512.png" alt="SocialsCap">
+      <span>SocialsCap</span>
+    </a>
+    <div class="nav-right">
+      <a class="nav-back" href="index.html" data-lang="en">← Back to app</a>
+      <a class="nav-back" href="index.html" data-lang="nl">← Terug naar app</a>
+      <div class="nav-lang">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">NL</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-kicker" data-lang="en">Research &amp; mission</p>
+    <p class="page-kicker" data-lang="nl">Onderzoek &amp; missie</p>
+    <h1 data-lang="en">Social media addiction is a documented public health crisis.<br>SocialsCap is our response.</h1>
+    <h1 data-lang="nl">Verslaving aan sociale media is een gedocumenteerde volksgezondheidscrisis.<br>SocialsCap is ons antwoord.</h1>
+    <p data-lang="en">The major platforms are engineered to be addictive. Variable reward schedules, infinite scroll, and algorithmically-optimised feeds exploit the same neurological mechanisms as slot machines. The evidence is clear — and growing. SocialsCap was built as a serious, privacy-respecting intervention: a hard limit that actually holds.</p>
+    <p data-lang="nl">De grote platforms zijn ontworpen om verslavend te zijn. Variabele beloningsschema's, eindeloos scrollen en algoritmisch geoptimaliseerde feeds maken gebruik van dezelfde neurologische mechanismen als gokautomaten. Het bewijs is duidelijk — en groeit. SocialsCap is gebouwd als een serieuze, privacyrespecterende interventie: een harde limiet die écht werkt.</p>
+  </div>
+</div>
+
+<!-- STAT BAND -->
+<div class="stat-band">
+  <div class="stat-band-inner">
+    <div class="stat">
+      <div class="num">2–3h</div>
+      <h4 data-lang="en">Average daily social media use</h4>
+      <h4 data-lang="nl">Gemiddeld dagelijks gebruik sociale media</h4>
+      <p data-lang="en">Adults in the US and EU spend 2–3 hours per day on social media — rising year on year since 2012.</p>
+      <p data-lang="nl">Volwassenen in de VS en EU besteden 2–3 uur per dag aan sociale media — jaarlijks stijgend sinds 2012.</p>
+      <span class="source">DataReportal Global Digital Reports</span>
+    </div>
+    <div class="stat">
+      <div class="num">+50%</div>
+      <h4 data-lang="en">Rise in teen depression since 2012</h4>
+      <h4 data-lang="nl">Stijging depressie bij tieners sinds 2012</h4>
+      <p data-lang="en">Rates of depression and anxiety in adolescents increased sharply following the mass adoption of smartphones and social apps.</p>
+      <p data-lang="nl">Depressie- en angstcijfers bij adolescenten stegen scherp na de massale adoptie van smartphones en sociale apps.</p>
+      <span class="source">Twenge et al., Journal of Abnormal Psychology</span>
+    </div>
+    <div class="stat">
+      <div class="num">10%</div>
+      <h4 data-lang="en">Meet clinical criteria for addiction</h4>
+      <h4 data-lang="nl">Voldoet aan klinische criteria voor verslaving</h4>
+      <p data-lang="en">Research suggests up to 10% of social media users display behavioural patterns consistent with addiction — loss of control, withdrawal, continued use despite harm.</p>
+      <p data-lang="nl">Onderzoek suggereert dat tot 10% van de gebruikers gedragspatronen vertoont die consistent zijn met verslaving — controleverlies, ontwenning, voortgezet gebruik ondanks schade.</p>
+      <span class="source">Andreassen et al., Psychological Reports</span>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div class="sec">
+  <div class="inner">
+    <p class="sec-label" data-lang="en">Key research</p>
+    <p class="sec-label" data-lang="nl">Belangrijk onderzoek</p>
+    <h2 class="sec-title" data-lang="en">What the science says</h2>
+    <h2 class="sec-title" data-lang="nl">Wat de wetenschap zegt</h2>
+    <p class="sec-intro" data-lang="en">A curated selection of peer-reviewed research, books, and investigations into the design mechanics of social platforms and their impact on mental health. These are the works that informed SocialsCap's design philosophy.</p>
+    <p class="sec-intro" data-lang="nl">Een selectie van peer-reviewed onderzoeken, boeken en onderzoeken naar de ontwerpmechanismen van sociale platforms en hun invloed op de geestelijke gezondheid. Dit zijn de werken die SocialsCap's ontwerpfilosofie informeerden.</p>
+
+    <div class="research-grid" data-lang="en">
+      <div class="r-card">
+        <span class="r-tag">Book · 2024</span>
+        <h3>The Anxious Generation</h3>
+        <p class="r-author">Jonathan Haidt — social psychologist, NYU Stern School of Business</p>
+        <p>Haidt documents the sharp decline in adolescent mental health that began around 2012 — precisely when social media became smartphone-native. He argues that the "great rewiring of childhood" by social apps is a primary driver of the teen mental health crisis, and calls for hard limits on platform access.</p>
+        <a class="r-link" href="https://www.anxiousgeneration.com" target="_blank" rel="noopener">
+          anxiousgeneration.com
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Book · 2017</span>
+        <h3>iGen</h3>
+        <p class="r-author">Jean Twenge — professor of psychology, San Diego State University</p>
+        <p>Twenge's longitudinal analysis of generational survey data showed that teens who spend more time on social media are significantly more likely to report depression, loneliness, and sleep disruption. The research established the correlation between screen time and mental health decline that has since been replicated widely.</p>
+        <a class="r-link" href="https://www.simonandschuster.com/books/iGen/Jean-M-Twenge/9781501152016" target="_blank" rel="noopener">
+          simonandschuster.com
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Research · Ongoing</span>
+        <h3>Variable reward schedules and compulsive use</h3>
+        <p class="r-author">B.F. Skinner's operant conditioning — applied to platform design</p>
+        <p>Social media feeds are built on variable ratio reinforcement — the same psychological mechanism that makes slot machines compelling. Unpredictable likes, comments, and viral moments create a neurological reward loop that resists voluntary interruption. This is not accidental design; it is intentional.</p>
+        <a class="r-link" href="https://www.sciencedirect.com/science/article/pii/S0747563217302224" target="_blank" rel="noopener">
+          ScienceDirect — Compulsive social media use
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Documentary · 2020</span>
+        <h3>The Social Dilemma</h3>
+        <p class="r-author">Netflix — featuring Tristan Harris, Aza Raskin, and former platform engineers</p>
+        <p>Former engineers and ethicists from Google, Facebook, Twitter, and Pinterest explain in detail how recommendation algorithms and notification systems are designed to maximise engagement at the expense of user wellbeing. One of the most-watched documents on tech's impact on mental health.</p>
+        <a class="r-link" href="https://www.thesocialdilemma.com" target="_blank" rel="noopener">
+          thesocialdilemma.com
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Book · 2019</span>
+        <h3>Digital Minimalism</h3>
+        <p class="r-author">Cal Newport — professor of computer science, Georgetown University</p>
+        <p>Newport argues that passive scrolling of social feeds provides little genuine value while consuming significant time and attention. He proposes intentional, time-bounded use as the only sustainable alternative to compulsive checking — the exact approach SocialsCap enables.</p>
+        <a class="r-link" href="https://www.calnewport.com/books/digital-minimalism/" target="_blank" rel="noopener">
+          calnewport.com
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Research · 2017</span>
+        <h3>Social Media Addiction Scale (SMAS-6)</h3>
+        <p class="r-author">Andreassen et al. — University of Bergen</p>
+        <p>The Bergen Social Media Addiction Scale, published in Psychological Reports, provides a validated six-item scale to assess addictive social media use — preoccupation, tolerance, withdrawal, relapse, conflict, and problems. It established that social media addiction meets diagnostic criteria for behavioural addiction.</p>
+        <a class="r-link" href="https://journals.sagepub.com/doi/10.1177/0033294116689453" target="_blank" rel="noopener">
+          SAGE Journals — Bergen SMAS
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="research-grid" data-lang="nl">
+      <div class="r-card">
+        <span class="r-tag">Boek · 2024</span>
+        <h3>The Anxious Generation</h3>
+        <p class="r-author">Jonathan Haidt — sociaalpsycholoog, NYU Stern School of Business</p>
+        <p>Haidt documenteert de scherpe daling van de geestelijke gezondheid van adolescenten die begon rond 2012 — precies toen sociale media smartphone-native werden. Hij stelt dat de "grote bedrading van de jeugd" door sociale apps een primaire drijfveer is van de mentale gezondheidskrisis bij tieners.</p>
+        <a class="r-link" href="https://www.anxiousgeneration.com" target="_blank" rel="noopener">anxiousgeneration.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Boek · 2017</span>
+        <h3>iGen</h3>
+        <p class="r-author">Jean Twenge — professor psychologie, San Diego State University</p>
+        <p>Twenge's longitudinale analyse toonde aan dat tieners die meer tijd op sociale media doorbrengen significant vaker depressie, eenzaamheid en slaapproblemen rapporteren. Het onderzoek legde de correlatie bloot die sindsdien breed is gerepliceerd.</p>
+        <a class="r-link" href="https://www.simonandschuster.com/books/iGen/Jean-M-Twenge/9781501152016" target="_blank" rel="noopener">simonandschuster.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Documentaire · 2020</span>
+        <h3>The Social Dilemma</h3>
+        <p class="r-author">Netflix — met Tristan Harris, Aza Raskin en voormalige platform-engineers</p>
+        <p>Voormalige engineers en ethici van Google, Facebook en Twitter leggen uit hoe aanbevelingsalgoritmen en notificatiesystemen zijn ontworpen om betrokkenheid te maximaliseren ten koste van het welzijn van gebruikers.</p>
+        <a class="r-link" href="https://www.thesocialdilemma.com" target="_blank" rel="noopener">thesocialdilemma.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Boek · 2019</span>
+        <h3>Digital Minimalism</h3>
+        <p class="r-author">Cal Newport — professor computerwetenschappen, Georgetown University</p>
+        <p>Newport betoogt dat intentioneel, tijdgebonden gebruik de enige duurzame alternatief is voor compulsief scrollen — precies de aanpak die SocialsCap mogelijk maakt.</p>
+        <a class="r-link" href="https://www.calnewport.com/books/digital-minimalism/" target="_blank" rel="noopener">calnewport.com <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Onderzoek · 2017</span>
+        <h3>Bergen Social Media Addiction Scale</h3>
+        <p class="r-author">Andreassen et al. — Universiteit van Bergen</p>
+        <p>De SMAS-6 is een gevalideerde schaal om verslavend gebruik van sociale media te meten — preoccupatie, tolerantie, onthoudingsverschijnselen, terugval, conflict en problemen. Het bewees dat sociale mediaverslaving voldoet aan diagnostische criteria voor gedragsverslaving.</p>
+        <a class="r-link" href="https://journals.sagepub.com/doi/10.1177/0033294116689453" target="_blank" rel="noopener">SAGE Journals <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+      <div class="r-card">
+        <span class="r-tag">Variabele beloningsschema's</span>
+        <h3>De psychologie achter het scrollen</h3>
+        <p class="r-author">Gebaseerd op Skinner's operante conditionering</p>
+        <p>Sociale mediafeeds zijn gebouwd op variabele ratio-bekrachtiging — hetzelfde psychologische mechanisme dat gokautomaten dwingend maakt. Onvoorspelbare likes en virale momenten creëren een neurologische beloningslus die vrijwillige onderbreking tegenwerkt.</p>
+        <a class="r-link" href="https://www.sciencedirect.com/science/article/pii/S0747563217302224" target="_blank" rel="noopener">ScienceDirect <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTITUTIONS -->
+<div class="sec">
+  <div class="inner">
+    <p class="sec-label" data-lang="en">Organisations working on this</p>
+    <p class="sec-label" data-lang="nl">Organisaties die hieraan werken</p>
+    <h2 class="sec-title" data-lang="en">Who else is fighting this problem</h2>
+    <h2 class="sec-title" data-lang="nl">Wie werkt er nog meer aan dit probleem</h2>
+    <p class="sec-intro" data-lang="en">SocialsCap is one tool in a larger ecosystem of researchers, advocates, and institutions working to address social media's impact on mental health. These organisations are worth knowing.</p>
+    <p class="sec-intro" data-lang="nl">SocialsCap is één instrument in een groter ecosysteem van onderzoekers, voorstanders en instellingen die werken aan de impact van sociale media op de geestelijke gezondheid.</p>
+
+    <div class="inst-grid" data-lang="en">
+      <div class="inst-card">
+        <h3>Center for Humane Technology</h3>
+        <p>Founded by former Google ethicist Tristan Harris. Researches how technology platforms affect democracy, mental health, and human attention.</p>
+        <a href="https://www.humanetech.com" target="_blank" rel="noopener">humanetech.com →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Common Sense Media</h3>
+        <p>Independent nonprofit providing research, ratings, and tools for families navigating media and technology. Strong focus on teen screen time and social media impact.</p>
+        <a href="https://www.commonsensemedia.org" target="_blank" rel="noopener">commonsensemedia.org →</a>
+      </div>
+      <div class="inst-card">
+        <h3>After Babel (Substack)</h3>
+        <p>Jonathan Haidt's newsletter covering the social media and mental health research space. One of the most active hubs for new studies and policy discussions.</p>
+        <a href="https://www.afterbabel.com" target="_blank" rel="noopener">afterbabel.com →</a>
+      </div>
+      <div class="inst-card">
+        <h3>American Psychological Association</h3>
+        <p>The APA has issued guidance on adolescent social media use and regularly publishes peer-reviewed research on behavioural addiction and digital wellbeing.</p>
+        <a href="https://www.apa.org/topics/social-media-internet" target="_blank" rel="noopener">apa.org →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Trimbos-instituut (NL)</h3>
+        <p>Dutch national institute of mental health and addiction research. Publishes Dutch-language research on internet and social media addiction.</p>
+        <a href="https://www.trimbos.nl" target="_blank" rel="noopener">trimbos.nl →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Digital Wellness Institute</h3>
+        <p>Research and training organisation focused on healthy technology habits. Offers professional certification in digital wellness for clinicians and educators.</p>
+        <a href="https://www.digitalwellnessinstitute.com" target="_blank" rel="noopener">digitalwellnessinstitute.com →</a>
+      </div>
+    </div>
+
+    <div class="inst-grid" data-lang="nl">
+      <div class="inst-card">
+        <h3>Center for Humane Technology</h3>
+        <p>Opgericht door voormalig Google-ethicus Tristan Harris. Onderzoekt hoe technologieplatforms democratie, geestelijke gezondheid en menselijke aandacht beïnvloeden.</p>
+        <a href="https://www.humanetech.com" target="_blank" rel="noopener">humanetech.com →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Trimbos-instituut</h3>
+        <p>Het nationale kennisinstituut voor geestelijke gezondheid en verslavingszorg. Publiceert Nederlandstalig onderzoek naar internet- en sociale mediaverslaving.</p>
+        <a href="https://www.trimbos.nl" target="_blank" rel="noopener">trimbos.nl →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Common Sense Media</h3>
+        <p>Onafhankelijke non-profit die onderzoek en tools biedt voor gezinnen die navigeren door media en technologie. Sterke focus op schermtijd bij tieners.</p>
+        <a href="https://www.commonsensemedia.org" target="_blank" rel="noopener">commonsensemedia.org →</a>
+      </div>
+      <div class="inst-card">
+        <h3>After Babel (Substack)</h3>
+        <p>Jonathan Haidt's nieuwsbrief over sociale media en mentale gezondheid. Een van de meest actieve hubs voor nieuwe studies en beleidsdiscussies.</p>
+        <a href="https://www.afterbabel.com" target="_blank" rel="noopener">afterbabel.com →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Jellinek / Verslavingszorg Noord Nederland</h3>
+        <p>Nederlandstalige verslavingszorginstellingen die ook internet- en sociale mediaverslaving behandelen.</p>
+        <a href="https://www.jellinek.nl" target="_blank" rel="noopener">jellinek.nl →</a>
+      </div>
+      <div class="inst-card">
+        <h3>Digital Wellness Institute</h3>
+        <p>Onderzoeks- en trainingsorganisatie gericht op gezonde technologiegewoonten. Biedt professionele certificering in digitaal welzijn voor clinici en educators.</p>
+        <a href="https://www.digitalwellnessinstitute.com" target="_blank" rel="noopener">digitalwellnessinstitute.com →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <div class="philosophy-inner">
+    <p class="sec-label" data-lang="en">Our design philosophy</p>
+    <p class="sec-label" data-lang="nl">Onze ontwerpfilosofie</p>
+    <h2 class="sec-title" data-lang="en">Why SocialsCap is different</h2>
+    <h2 class="sec-title" data-lang="nl">Waarom SocialsCap anders is</h2>
+    <p class="sec-intro" data-lang="en">Most screen time tools rely on awareness and nudges — gentle reminders that are trivially easy to dismiss. For users in the grip of compulsive use, awareness is not the problem. SocialsCap is built on a different premise.</p>
+    <p class="sec-intro" data-lang="nl">De meeste schermtijdtools vertrouwen op bewustzijn en nudges — zachte herinneringen die triviaal eenvoudig te negeren zijn. Voor gebruikers die gevangen zitten in compulsief gebruik is bewustzijn niet het probleem. SocialsCap is gebouwd op een ander uitgangspunt.</p>
+
+    <div class="phil-grid" data-lang="en">
+      <div class="phil-item">
+        <h3>Hard limits, not reminders</h3>
+        <p>When the daily limit is reached, apps are blocked. Not nudged. Not warned. Blocked. This is intentional — a nudge is what the platforms themselves use to keep you engaged; it is not a credible counter-intervention.</p>
+      </div>
+      <div class="phil-item">
+        <h3>PIN protection removes the escape hatch</h3>
+        <p>Awareness tools fail because the same device that shows the warning is the device that launches the app. Premium PIN protection means a trusted person — not the user — holds the key to extending limits. This is the critical difference between a reminder and an intervention.</p>
+      </div>
+      <div class="phil-item">
+        <h3>Zero data, zero conflict of interest</h3>
+        <p>SocialsCap collects no personal data, uses no analytics, has no advertising, and requires no account. Our only revenue is the €3.99 one-time Premium upgrade. We have no financial incentive to keep you on your phone — the opposite of every platform we're limiting.</p>
+      </div>
+      <div class="phil-item">
+        <h3>Built for serious use cases</h3>
+        <p>SocialsCap was not designed as a productivity app for casual use. It was designed for people who recognise they have a problem and want a tool that takes that seriously — and for institutions, therapists, and parents supporting someone who does.</p>
+      </div>
+    </div>
+
+    <div class="phil-grid" data-lang="nl">
+      <div class="phil-item">
+        <h3>Harde limieten, geen herinneringen</h3>
+        <p>Wanneer de daglimiet bereikt is, worden apps geblokkeerd. Niet gewaarschuwd. Niet herinnerd. Geblokkeerd. Dit is opzettelijk — een nudge is wat de platforms zelf gebruiken om je betrokken te houden.</p>
+      </div>
+      <div class="phil-item">
+        <h3>PIN-beveiliging sluit de ontsnappingsroute</h3>
+        <p>Een vertrouwenspersoon — niet de gebruiker zelf — beheert de sleutel om limieten te verlengen. Dit is het cruciale verschil tussen een herinnering en een echte interventie.</p>
+      </div>
+      <div class="phil-item">
+        <h3>Nul data, nul belangenconflict</h3>
+        <p>SocialsCap verzamelt geen persoonsgegevens, gebruikt geen analytics, heeft geen advertenties en vereist geen account. Onze enige inkomstenbron is de eenmalige €3,99 Premium upgrade.</p>
+      </div>
+      <div class="phil-item">
+        <h3>Gebouwd voor serieus gebruik</h3>
+        <p>SocialsCap is ontworpen voor mensen die erkennen dat ze een probleem hebben en een tool willen die dat serieus neemt — en voor instellingen, therapeuten en ouders die iemand ondersteunen.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2 data-lang="en">Try SocialsCap. See if it works.</h2>
+    <h2 data-lang="nl">Probeer SocialsCap. Ervaar of het werkt.</h2>
+    <p data-lang="en">Free to download on Android. No accounts, no data, no ads. Upgrade to PIN protection for €3.99 when you're ready to get serious.</p>
+    <p data-lang="nl">Gratis te downloaden op Android. Geen accounts, geen data, geen advertenties. Upgrade naar PIN-beveiliging voor €3,99 als je er serieus mee aan de slag wilt.</p>
+    <div>
+      <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83 1-.99 1.45-.45l14 8.5a.5.5 0 010 .9l-14 8.5C3.99 21.5 3 21.33 3 20.5z"/></svg>
+        <span data-lang="en">Get it on Google Play</span>
+        <span data-lang="nl">Installeer via Google Play</span>
+      </a>
+      <a href="index.html" class="btn-ghost" data-lang="en">← Back to homepage</a>
+      <a href="index.html" class="btn-ghost" data-lang="nl">← Terug naar homepage</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <strong style="color:var(--text)">SocialsCap</strong>
+    &nbsp;·&nbsp;
+    <a href="privacy.html" target="_blank" data-lang="en">Privacy policy</a>
+    <a href="privacy.html" target="_blank" data-lang="nl">Privacybeleid</a>
+    &nbsp;·&nbsp;
+    <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" target="_blank" rel="noopener">Google Play</a>
+    &nbsp;·&nbsp;
+    <span style="color:var(--muted)">© 2026 SocialsCap</span>
+  </p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-nl').classList.toggle('active', lang === 'nl');
+  localStorage.setItem('sc_lang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('sc_lang');
+  if (saved) { setLang(saved); return; }
+  var bl = navigator.language || navigator.userLanguage || '';
+  setLang(bl.startsWith('nl') ? 'nl' : 'en');
+})();
+</script>
+</body>
+</html>
