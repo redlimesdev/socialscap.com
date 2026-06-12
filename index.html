@@ -381,16 +381,18 @@ span[data-lang] { display: none; }
   <button class="lb-prev" onclick="event.stopPropagation();moveLightbox(-1)" aria-label="Previous">‹</button>
   <button class="lb-next" onclick="event.stopPropagation();moveLightbox(1)" aria-label="Next">›</button>
   <div class="lb-content" onclick="event.stopPropagation()">
-    <div class="lb-slide" id="lb-hero-0"><img src="ss_widget_en.png" alt="Home screen widget"><p class="lb-caption">Home screen widget</p></div>
-    <div class="lb-slide" id="lb-hero-1"><img src="ss_blocked_en.png" alt="Blocked screen"><p class="lb-caption">Blocked screen</p></div>
-    <div class="lb-slide" id="lb-en-0"><img src="ss_main_en.png" alt="Main screen"><p class="lb-caption">Main screen</p></div>
-    <div class="lb-slide" id="lb-en-1"><img src="ss_bedtime_en.png" alt="Bedtime schedule"><p class="lb-caption">Bedtime schedule</p></div>
-    <div class="lb-slide" id="lb-en-2"><img src="ss_limit_en.png" alt="Daily limit"><p class="lb-caption">Daily limit</p></div>
-    <div class="lb-slide" id="lb-en-3"><img src="ss_pin_en.png" alt="PIN access guard"><p class="lb-caption">PIN access guard</p></div>
-    <div class="lb-slide" id="lb-nl-0"><img src="ss_main_nl.png" alt="Hoofdscherm"><p class="lb-caption">Hoofdscherm</p></div>
-    <div class="lb-slide" id="lb-nl-1"><img src="ss_bedtime_nl.png" alt="Bedtijdschema"><p class="lb-caption">Bedtijdschema</p></div>
-    <div class="lb-slide" id="lb-nl-2"><img src="ss_limit_nl.png" alt="Daglimiet"><p class="lb-caption">Daglimiet</p></div>
-    <div class="lb-slide" id="lb-nl-3"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging"><p class="lb-caption">PIN-toegangsbeveiliging</p></div>
+    <p style="color:rgba(255,255,255,0.45);font-size:13px;margin-bottom:10px;text-align:center" data-lang="en">Tap image or press Esc to close</p>
+    <p style="color:rgba(255,255,255,0.45);font-size:13px;margin-bottom:10px;text-align:center" data-lang="nl">Tik op afbeelding of druk op Esc om te sluiten</p>
+    <div class="lb-slide" id="lb-hero-0"><img src="ss_widget_en.png" alt="Home screen widget" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Home screen widget</p></div>
+    <div class="lb-slide" id="lb-hero-1"><img src="ss_blocked_en.png" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
+    <div class="lb-slide" id="lb-en-0"><img src="ss_main_en.png" alt="Main screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Main screen</p></div>
+    <div class="lb-slide" id="lb-en-1"><img src="ss_bedtime_en.png" alt="Bedtime schedule" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtime schedule</p></div>
+    <div class="lb-slide" id="lb-en-2"><img src="ss_limit_en.png" alt="Daily limit" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daily limit</p></div>
+    <div class="lb-slide" id="lb-en-3"><img src="ss_pin_en.png" alt="PIN access guard" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN access guard</p></div>
+    <div class="lb-slide" id="lb-nl-0"><img src="ss_main_nl.png" alt="Hoofdscherm" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Hoofdscherm</p></div>
+    <div class="lb-slide" id="lb-nl-1"><img src="ss_bedtime_nl.png" alt="Bedtijdschema" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtijdschema</p></div>
+    <div class="lb-slide" id="lb-nl-2"><img src="ss_limit_nl.png" alt="Daglimiet" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daglimiet</p></div>
+    <div class="lb-slide" id="lb-nl-3"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN-toegangsbeveiliging</p></div>
   </div>
 </div>
 
