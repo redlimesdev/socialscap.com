@@ -45,7 +45,8 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .hero h1 { font-size: clamp(52px, 6.5vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 22px; }
 .hero-sub { font-size: clamp(17px, 1.8vw, 26px); color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
 .hero-phones { display: flex; gap: 24px; justify-content: flex-start; align-items: flex-start; margin-bottom: 44px; }
-.phone-frame { background: #10151D; border-radius: 36px; padding: 11px; width: 236px; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; }
+.phone-frame { background: #10151D; border-radius: 36px; padding: 11px; width: 236px; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.phone-frame:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(16,21,29,0.30), 0 8px 24px rgba(16,21,29,0.14); }
 .phone-frame img { width: 100%; display: block; border-radius: 27px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
@@ -241,10 +242,10 @@ span[data-lang] { display: none; }
   <p class="hero-sub" data-lang="nl">Krijg grip op de tijd die je besteedt aan sociale media.</p>
 
   <div class="hero-phones">
-    <div class="phone-frame">
+    <div class="phone-frame" onclick="openHeroLightbox(0)" role="button" aria-label="View widget screen full size">
       <img src="ss_widget_en.png" alt="SocialsCap home screen widget">
     </div>
-    <div class="phone-frame">
+    <div class="phone-frame" onclick="openHeroLightbox(1)" role="button" aria-label="View blocked screen full size">
       <img src="ss_blocked_en.png" alt="SocialsCap blocked screen">
     </div>
   </div>
@@ -380,6 +381,8 @@ span[data-lang] { display: none; }
   <button class="lb-prev" onclick="event.stopPropagation();moveLightbox(-1)" aria-label="Previous">‹</button>
   <button class="lb-next" onclick="event.stopPropagation();moveLightbox(1)" aria-label="Next">›</button>
   <div class="lb-content" onclick="event.stopPropagation()">
+    <div class="lb-slide" id="lb-hero-0"><img src="ss_widget_en.png" alt="Home screen widget"><p class="lb-caption">Home screen widget</p></div>
+    <div class="lb-slide" id="lb-hero-1"><img src="ss_blocked_en.png" alt="Blocked screen"><p class="lb-caption">Blocked screen</p></div>
     <div class="lb-slide" id="lb-en-0"><img src="ss_main_en.png" alt="Main screen"><p class="lb-caption">Main screen</p></div>
     <div class="lb-slide" id="lb-en-1"><img src="ss_bedtime_en.png" alt="Bedtime schedule"><p class="lb-caption">Bedtime schedule</p></div>
     <div class="lb-slide" id="lb-en-2"><img src="ss_limit_en.png" alt="Daily limit"><p class="lb-caption">Daily limit</p></div>
@@ -529,9 +532,18 @@ function setLang(lang) {
 
 // Lightbox
 var lbCurrent = 0, lbLang = 'en', lbTotal = 4;
+function openHeroLightbox(n) {
+  lbCurrent = n;
+  lbLang = 'hero';
+  lbTotal = 2;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 function openLightbox(n, lang) {
   lbCurrent = n;
   lbLang = lang || (document.body.classList.contains('lang-nl') ? 'nl' : 'en');
+  lbTotal = 4;
   updateLightbox();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
