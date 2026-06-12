@@ -255,7 +255,7 @@ span[data-lang] { display: none; }
 
   <div class="hero-phones">
     <div class="phone-frame" onclick="openHeroLightbox(0)" role="button" aria-label="View widget screen full size">
-      <img src="ss_widget_en.png" alt="SocialsCap home screen widget">
+      <img id="hero-widget-img" src="ss_widget_en.png" alt="SocialsCap home screen widget">
     </div>
     <div class="phone-frame" onclick="openHeroLightbox(1)" role="button" aria-label="View blocked screen full size">
       <img src="ss_blocked_en.png" alt="SocialsCap blocked screen">
@@ -397,7 +397,11 @@ span[data-lang] { display: none; }
   <button class="lb-prev" onclick="event.stopPropagation();moveLightbox(-1)" aria-label="Previous">‹</button>
   <button class="lb-next" onclick="event.stopPropagation();moveLightbox(1)" aria-label="Next">›</button>
   <div class="lb-content" onclick="event.stopPropagation()">
-    <div class="lb-slide" id="lb-hero-0"><img src="ss_widget_en.png" alt="Home screen widget" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Home screen widget</p></div>
+    <div class="lb-slide" id="lb-hero-0">
+      <img id="lb-widget-img" src="ss_widget_en.png" alt="Home screen widget" onclick="closeLightbox()" style="cursor:zoom-out">
+      <p class="lb-caption" data-lang="en">Home screen widget</p>
+      <p class="lb-caption" data-lang="nl">Startscherm widget</p>
+    </div>
     <div class="lb-slide" id="lb-hero-1"><img src="ss_blocked_en.png" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
     <div class="lb-slide" id="lb-en-0"><img src="ss_main_en.png" alt="Main screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Main screen</p></div>
     <div class="lb-slide" id="lb-en-1"><img src="ss_bedtime_en.png" alt="Bedtime schedule" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtime schedule</p></div>
@@ -524,6 +528,11 @@ function setLang(lang) {
   document.body.className = 'lang-' + lang;
   var sel = document.getElementById('langSelect');
   if (sel) sel.value = lang;
+  // swap widget image
+  var wi = document.getElementById('hero-widget-img');
+  if (wi) wi.src = lang === 'nl' ? 'ss_widget_nl.png' : 'ss_widget_en.png';
+  var lbwi = document.getElementById('lb-widget-img');
+  if (lbwi) lbwi.src = lang === 'nl' ? 'ss_widget_nl.png' : 'ss_widget_en.png';
   localStorage.setItem('sc_lang', lang);
 }
 (function() {
