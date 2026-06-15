@@ -57,6 +57,19 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .phone-frame img { width: 100%; display: block; border-radius: 27px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
+/* Google Play badge — swaps black (dark theme) / outlined (light theme) */
+.gp-cta { display: inline-flex; align-items: center; gap: 12px; border-radius: 10px; padding: 10px 20px; text-decoration: none; border: 1px solid #000; background: #000; color: #fff; transition: transform 0.15s, box-shadow 0.2s; white-space: nowrap; }
+.gp-cta .gp-tri { width: 24px; height: 24px; flex-shrink: 0; }
+.gp-cta .gp-label { display: flex; flex-direction: column; line-height: 1.12; text-align: left; }
+.gp-cta .gp-top { font-size: 10px; font-weight: 500; letter-spacing: 0.03em; }
+.gp-cta .gp-bot { font-size: 18px; font-weight: 600; letter-spacing: 0.01em; }
+.gp-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+body.theme-light .gp-cta { background: #fff; border-color: var(--text); color: var(--text); }
+body.theme-dark .gp-cta { background: #000; border-color: #000; color: #fff; }
+/* Official badge image (swapped in once you add googleplay-light.png / googleplay-dark.png) */
+.gp-link { display: inline-block; text-decoration: none; }
+.gp-badge-img { height: 56px; width: auto; display: block; }
+.gp-fallback { display: none; }
 .hero-note { display: block; margin-top: 13px; font-size: 14px; color: var(--muted); }
 
 /* ZERO STATEMENT */
@@ -111,11 +124,12 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .ss-thumb:hover .ss-mini { box-shadow: 0 20px 52px rgba(16,21,29,0.26); }
 .ss-mini img { width: 100%; display: block; }
 .ss-label { font-size: 14px; font-weight: 500; color: var(--muted); margin-top: 11px; }
-.theme-toggle { display: inline-flex; gap: 4px; margin-top: 40px; padding: 4px; background: #fff; border: 1px solid var(--border); border-radius: 24px; }
-.theme-btn { display: inline-flex; align-items: center; gap: 7px; background: none; border: none; font-family: inherit; font-size: 13px; font-weight: 600; color: var(--muted); padding: 8px 18px; border-radius: 20px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.appearance { text-align: center; margin-top: 48px; }
+.appearance-label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.theme-toggle { display: inline-flex; gap: 4px; padding: 5px; background: #fff; border: 1px solid var(--border); border-radius: 12px; }
+.theme-btn { background: none; border: none; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--muted); padding: 9px 26px; border-radius: 8px; cursor: pointer; transition: background 0.2s, color 0.2s; }
 .theme-btn:hover { color: var(--text); }
-.theme-btn.active { background: var(--blue); color: #fff; }
-.theme-btn svg { width: 15px; height: 15px; }
+.theme-btn.active { background: var(--blue); color: #fff; box-shadow: 0 1px 3px rgba(32,103,176,0.3); }
 
 /* LIGHTBOX */
 .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 1000; align-items: center; justify-content: center; }
@@ -268,10 +282,15 @@ span[data-lang] { display: none; }
     </div>
   </div>
 
-  <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="btn-primary" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83 1-.99 1.45-.45l14 8.5a.5.5 0 010 .9l-14 8.5C3.99 21.5 3 21.33 3 20.5z"/></svg>
-    <span data-lang="en">Get it on Google Play</span>
-    <span data-lang="nl">Installeer via Google Play</span>
+  <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="gp-link" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+    <img class="gp-badge-img" alt="Get it on Google Play">
+    <span class="gp-fallback gp-cta">
+      <svg class="gp-tri" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.83 1-.99 1.45-.45l14 8.5a.5.5 0 010 .9l-14 8.5C3.99 21.5 3 21.33 3 20.5z"/></svg>
+      <span class="gp-label">
+        <span class="gp-top"><span data-lang="en">Get it on</span><span data-lang="nl">Installeer via</span></span>
+        <span class="gp-bot">Google Play</span>
+      </span>
+    </span>
   </a>
   <span class="hero-note" data-lang="en">Free · No accounts · No data collected · No ads · Android 8+</span>
   <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Geen advertenties · Android 8+</span>
@@ -395,10 +414,13 @@ span[data-lang] { display: none; }
     <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="ss_pin_nl.png" data-base="ss_pin_nl" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
   </div>
 
-  <div class="theme-toggle" role="group" aria-label="Screenshot theme">
-    <button class="theme-btn" data-mode="auto" onclick="setTheme('auto')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 000 18z" fill="currentColor" stroke="none"></path></svg><span data-lang="en">Auto</span><span data-lang="nl">Auto</span></button>
-    <button class="theme-btn" data-mode="light" onclick="setTheme('light')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"></path></svg><span data-lang="en">Light</span><span data-lang="nl">Licht</span></button>
-    <button class="theme-btn" data-mode="dark" onclick="setTheme('dark')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"></path></svg><span data-lang="en">Dark</span><span data-lang="nl">Donker</span></button>
+  <div class="appearance">
+    <p class="appearance-label"><span data-lang="en">Appearance</span><span data-lang="nl">Weergave</span></p>
+    <div class="theme-toggle" role="group" aria-label="Appearance">
+      <button class="theme-btn" data-mode="auto" onclick="setTheme('auto')"><span data-lang="en">System</span><span data-lang="nl">Systeem</span></button>
+      <button class="theme-btn" data-mode="light" onclick="setTheme('light')"><span data-lang="en">Light</span><span data-lang="nl">Licht</span></button>
+      <button class="theme-btn" data-mode="dark" onclick="setTheme('dark')"><span data-lang="en">Dark</span><span data-lang="nl">Donker</span></button>
+    </div>
   </div>
   </div>
 </div>
@@ -556,9 +578,26 @@ function applyTheme() {
       img.src = base + '.png';
     }
   });
+  var liveBadge = ['socialscap.com','www.socialscap.com'].indexOf(location.hostname) !== -1;
+  document.querySelectorAll('.gp-link').forEach(function(a) {
+    var img = a.querySelector('.gp-badge-img');
+    var fb = a.querySelector('.gp-fallback');
+    if (!img) return;
+    if (liveBadge) {
+      if (fb) fb.style.display = 'none';
+      img.style.display = '';
+      img.onerror = function() { img.style.display = 'none'; if (fb) fb.style.display = 'inline-flex'; };
+      img.src = light ? 'googleplay-light.png' : 'googleplay-dark.png';
+    } else {
+      img.style.display = 'none';
+      if (fb) fb.style.display = 'inline-flex';
+    }
+  });
   document.querySelectorAll('.theme-btn').forEach(function(b) {
     b.classList.toggle('active', b.getAttribute('data-mode') === themeMode);
   });
+  document.body.classList.toggle('theme-dark', !light);
+  document.body.classList.toggle('theme-light', light);
 }
 function setTheme(mode) { themeMode = mode; applyTheme(); }
 if (window.matchMedia) {
