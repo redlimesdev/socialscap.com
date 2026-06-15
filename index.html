@@ -111,6 +111,11 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .ss-thumb:hover .ss-mini { box-shadow: 0 20px 52px rgba(16,21,29,0.26); }
 .ss-mini img { width: 100%; display: block; }
 .ss-label { font-size: 14px; font-weight: 500; color: var(--muted); margin-top: 11px; }
+.theme-toggle { display: inline-flex; gap: 4px; margin-top: 40px; padding: 4px; background: #fff; border: 1px solid var(--border); border-radius: 24px; }
+.theme-btn { display: inline-flex; align-items: center; gap: 7px; background: none; border: none; font-family: inherit; font-size: 13px; font-weight: 600; color: var(--muted); padding: 8px 18px; border-radius: 20px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.theme-btn:hover { color: var(--text); }
+.theme-btn.active { background: var(--blue); color: #fff; }
+.theme-btn svg { width: 15px; height: 15px; }
 
 /* LIGHTBOX */
 .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 1000; align-items: center; justify-content: center; }
@@ -256,10 +261,10 @@ span[data-lang] { display: none; }
 
   <div class="hero-phones">
     <div class="phone-frame" onclick="openHeroLightbox(0)" role="button" aria-label="View widget screen full size">
-      <img id="hero-widget-img" src="ss_widget_en.png" alt="SocialsCap home screen widget">
+      <img id="hero-widget-img" src="ss_widget_en.png" data-base="ss_widget_en" alt="SocialsCap home screen widget">
     </div>
     <div class="phone-frame" onclick="openHeroLightbox(1)" role="button" aria-label="View blocked screen full size">
-      <img src="ss_blocked_en.png" alt="SocialsCap blocked screen">
+      <img src="ss_blocked_en.png" data-base="ss_blocked_en" alt="SocialsCap blocked screen">
     </div>
   </div>
 
@@ -378,16 +383,22 @@ span[data-lang] { display: none; }
   <p class="sec-body" data-lang="nl">Tik op een schermafbeelding voor een grotere weergave.</p>
 
   <div class="ss-grid" data-lang="en">
-    <div class="ss-thumb" onclick="openLightbox(0,'en')"><div class="ss-mini"><img src="ss_main_en.png" alt="Main screen"></div><p class="ss-label">Main screen</p></div>
-    <div class="ss-thumb" onclick="openLightbox(1,'en')"><div class="ss-mini"><img src="ss_bedtime_en.png" alt="Bedtime schedule"></div><p class="ss-label">Bedtime schedule</p></div>
-    <div class="ss-thumb" onclick="openLightbox(2,'en')"><div class="ss-mini"><img src="ss_limit_en.png" alt="Daily limit"></div><p class="ss-label">Daily limit</p></div>
-    <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><img src="ss_pin_en.png" alt="PIN access guard"></div><p class="ss-label">PIN access guard (upgrade)</p></div>
+    <div class="ss-thumb" onclick="openLightbox(0,'en')"><div class="ss-mini"><img src="ss_main_en.png" data-base="ss_main_en" alt="Main screen"></div><p class="ss-label">Main screen</p></div>
+    <div class="ss-thumb" onclick="openLightbox(1,'en')"><div class="ss-mini"><img src="ss_bedtime_en.png" data-base="ss_bedtime_en" alt="Bedtime schedule"></div><p class="ss-label">Bedtime schedule</p></div>
+    <div class="ss-thumb" onclick="openLightbox(2,'en')"><div class="ss-mini"><img src="ss_limit_en.png" data-base="ss_limit_en" alt="Daily limit"></div><p class="ss-label">Daily limit</p></div>
+    <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><img src="ss_pin_en.png" data-base="ss_pin_en" alt="PIN access guard"></div><p class="ss-label">PIN access guard (upgrade)</p></div>
   </div>
   <div class="ss-grid" data-lang="nl">
-    <div class="ss-thumb" onclick="openLightbox(0,'nl')"><div class="ss-mini"><img src="ss_main_nl.png" alt="Hoofdscherm"></div><p class="ss-label">Hoofdscherm</p></div>
-    <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><img src="ss_bedtime_nl.png" alt="Bedtijdschema"></div><p class="ss-label">Bedtijdschema</p></div>
-    <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><img src="ss_limit_nl.png" alt="Daglimiet"></div><p class="ss-label">Daglimiet</p></div>
-    <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
+    <div class="ss-thumb" onclick="openLightbox(0,'nl')"><div class="ss-mini"><img src="ss_main_nl.png" data-base="ss_main_nl" alt="Hoofdscherm"></div><p class="ss-label">Hoofdscherm</p></div>
+    <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><img src="ss_bedtime_nl.png" data-base="ss_bedtime_nl" alt="Bedtijdschema"></div><p class="ss-label">Bedtijdschema</p></div>
+    <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><img src="ss_limit_nl.png" data-base="ss_limit_nl" alt="Daglimiet"></div><p class="ss-label">Daglimiet</p></div>
+    <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="ss_pin_nl.png" data-base="ss_pin_nl" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Screenshot theme">
+    <button class="theme-btn" data-mode="auto" onclick="setTheme('auto')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 000 18z" fill="currentColor" stroke="none"></path></svg><span data-lang="en">Auto</span><span data-lang="nl">Auto</span></button>
+    <button class="theme-btn" data-mode="light" onclick="setTheme('light')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"></path></svg><span data-lang="en">Light</span><span data-lang="nl">Licht</span></button>
+    <button class="theme-btn" data-mode="dark" onclick="setTheme('dark')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"></path></svg><span data-lang="en">Dark</span><span data-lang="nl">Donker</span></button>
   </div>
   </div>
 </div>
@@ -399,19 +410,19 @@ span[data-lang] { display: none; }
   <button class="lb-next" onclick="event.stopPropagation();moveLightbox(1)" aria-label="Next">›</button>
   <div class="lb-content" onclick="event.stopPropagation()">
     <div class="lb-slide" id="lb-hero-0">
-      <img id="lb-widget-img" src="ss_widget_en.png" alt="Home screen widget" onclick="closeLightbox()" style="cursor:zoom-out">
+      <img id="lb-widget-img" src="ss_widget_en.png" data-base="ss_widget_en" alt="Home screen widget" onclick="closeLightbox()" style="cursor:zoom-out">
       <p class="lb-caption" data-lang="en">Home screen widget</p>
       <p class="lb-caption" data-lang="nl">Startscherm widget</p>
     </div>
-    <div class="lb-slide" id="lb-hero-1"><img src="ss_blocked_en.png" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
-    <div class="lb-slide" id="lb-en-0"><img src="ss_main_en.png" alt="Main screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Main screen</p></div>
-    <div class="lb-slide" id="lb-en-1"><img src="ss_bedtime_en.png" alt="Bedtime schedule" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtime schedule</p></div>
-    <div class="lb-slide" id="lb-en-2"><img src="ss_limit_en.png" alt="Daily limit" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daily limit</p></div>
-    <div class="lb-slide" id="lb-en-3"><img src="ss_pin_en.png" alt="PIN access guard" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN access guard</p></div>
-    <div class="lb-slide" id="lb-nl-0"><img src="ss_main_nl.png" alt="Hoofdscherm" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Hoofdscherm</p></div>
-    <div class="lb-slide" id="lb-nl-1"><img src="ss_bedtime_nl.png" alt="Bedtijdschema" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtijdschema</p></div>
-    <div class="lb-slide" id="lb-nl-2"><img src="ss_limit_nl.png" alt="Daglimiet" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daglimiet</p></div>
-    <div class="lb-slide" id="lb-nl-3"><img src="ss_pin_nl.png" alt="PIN-toegangsbeveiliging" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN-toegangsbeveiliging</p></div>
+    <div class="lb-slide" id="lb-hero-1"><img src="ss_blocked_en.png" data-base="ss_blocked_en" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
+    <div class="lb-slide" id="lb-en-0"><img src="ss_main_en.png" data-base="ss_main_en" alt="Main screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Main screen</p></div>
+    <div class="lb-slide" id="lb-en-1"><img src="ss_bedtime_en.png" data-base="ss_bedtime_en" alt="Bedtime schedule" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtime schedule</p></div>
+    <div class="lb-slide" id="lb-en-2"><img src="ss_limit_en.png" data-base="ss_limit_en" alt="Daily limit" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daily limit</p></div>
+    <div class="lb-slide" id="lb-en-3"><img src="ss_pin_en.png" data-base="ss_pin_en" alt="PIN access guard" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN access guard</p></div>
+    <div class="lb-slide" id="lb-nl-0"><img src="ss_main_nl.png" data-base="ss_main_nl" alt="Hoofdscherm" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Hoofdscherm</p></div>
+    <div class="lb-slide" id="lb-nl-1"><img src="ss_bedtime_nl.png" data-base="ss_bedtime_nl" alt="Bedtijdschema" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtijdschema</p></div>
+    <div class="lb-slide" id="lb-nl-2"><img src="ss_limit_nl.png" data-base="ss_limit_nl" alt="Daglimiet" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daglimiet</p></div>
+    <div class="lb-slide" id="lb-nl-3"><img src="ss_pin_nl.png" data-base="ss_pin_nl" alt="PIN-toegangsbeveiliging" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN-toegangsbeveiliging</p></div>
   </div>
 </div>
 
@@ -480,8 +491,8 @@ span[data-lang] { display: none; }
     <!-- PIN SCREEN -->
     <div class="pin-col">
       <div class="pin-frame">
-        <img data-lang="en" src="ss_pin_en.png" alt="PIN protection screen">
-        <img data-lang="nl" src="ss_pin_nl.png" alt="PIN-beveiliging scherm">
+        <img data-lang="en" src="ss_pin_en.png" data-base="ss_pin_en" alt="PIN protection screen">
+        <img data-lang="nl" src="ss_pin_nl.png" data-base="ss_pin_nl" alt="PIN-beveiliging scherm">
       </div>
       <p class="pin-col-label" data-lang="en">PIN access guard</p>
       <p class="pin-col-label" data-lang="nl">PIN-toegangsbeveiliging</p>
@@ -525,15 +536,46 @@ span[data-lang] { display: none; }
     el.appendChild(s); el.load();
   });
 })();
+
+// Theme (Auto / Light / Dark) — swaps screenshot images only; page chrome stays light
+var themeMode = 'auto';
+function resolvedTheme() {
+  if (themeMode === 'light') return 'light';
+  if (themeMode === 'dark') return 'dark';
+  return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+}
+function applyTheme() {
+  var light = resolvedTheme() === 'light';
+  document.querySelectorAll('img[data-base]').forEach(function(img) {
+    var base = img.getAttribute('data-base');
+    if (light) {
+      img.onerror = function() { img.onerror = null; img.src = base + '.png'; }; // graceful fallback if a light file is missing
+      img.src = base + '_light.jpg';
+    } else {
+      img.onerror = null;
+      img.src = base + '.png';
+    }
+  });
+  document.querySelectorAll('.theme-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-mode') === themeMode);
+  });
+}
+function setTheme(mode) { themeMode = mode; applyTheme(); }
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+    if (themeMode === 'auto') applyTheme();
+  });
+}
 function setLang(lang) {
   document.body.className = 'lang-' + lang;
   var sel = document.getElementById('langSelect');
   if (sel) sel.value = lang;
-  // swap widget image
+  var wbase = lang === 'nl' ? 'ss_widget_nl' : 'ss_widget_en';
   var wi = document.getElementById('hero-widget-img');
-  if (wi) wi.src = lang === 'nl' ? 'ss_widget_nl.png' : 'ss_widget_en.png';
+  if (wi) wi.setAttribute('data-base', wbase);
   var lbwi = document.getElementById('lb-widget-img');
-  if (lbwi) lbwi.src = lang === 'nl' ? 'ss_widget_nl.png' : 'ss_widget_en.png';
+  if (lbwi) lbwi.setAttribute('data-base', wbase);
+  applyTheme();
   localStorage.setItem('sc_lang', lang);
 }
 (function() {
