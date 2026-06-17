@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.socialscap.com/sitemap.xml
+Sitemap: https://socialscap.com/sitemap.xml
