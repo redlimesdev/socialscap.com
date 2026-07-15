@@ -88,9 +88,9 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .hero h1 { font-size: clamp(52px, 6.5vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 22px; }
 .hero-sub { font-size: 17px; color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
 .hero-phones { display: flex; gap: 24px; justify-content: center; align-items: flex-start; margin-bottom: 44px; align-self: center; }
-.phone-frame { background: #10151D; border-radius: 36px; padding: 11px; width: 236px; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.phone-frame { background: #10151D; border-radius: 36px; box-sizing: border-box; padding: 11px; width: 236px; aspect-ratio: 9 / 19.5; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .phone-frame:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(16,21,29,0.30), 0 8px 24px rgba(16,21,29,0.14); }
-.phone-frame img { width: 100%; display: block; border-radius: 27px; }
+.phone-frame img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 27px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
 /* Google Play badge — swaps black (dark theme) / outlined (light theme) */
