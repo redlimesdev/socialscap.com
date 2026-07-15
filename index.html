@@ -316,7 +316,7 @@ span[data-lang] { display: none; }
       <img id="hero-widget-img" src="screens/ss_widget_en_light.jpg" data-base="screens/ss_widget_en" alt="SocialsCap home screen widget">
     </div>
     <div class="phone-frame" onclick="openHeroLightbox(1)" role="button" aria-label="View blocked screen full size">
-      <img src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="SocialsCap blocked screen">
+      <img id="hero-blocked-img" src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="SocialsCap blocked screen">
     </div>
   </div>
 
@@ -474,7 +474,7 @@ span[data-lang] { display: none; }
       <p class="lb-caption" data-lang="en">Home screen widget</p>
       <p class="lb-caption" data-lang="nl">Startscherm widget</p>
     </div>
-    <div class="lb-slide" id="lb-hero-1"><img src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
+    <div class="lb-slide" id="lb-hero-1"><img id="lb-blocked-img" src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
     <div class="lb-slide" id="lb-en-0"><img src="screens/ss_main_en_light.jpg" data-base="screens/ss_main_en" alt="Main screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Main screen</p></div>
     <div class="lb-slide" id="lb-en-1"><img src="screens/ss_bedtime_en_light.jpg" data-base="screens/ss_bedtime_en" alt="Bedtime schedule" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtime schedule</p></div>
     <div class="lb-slide" id="lb-en-2"><img src="screens/ss_limit_en_light.jpg" data-base="screens/ss_limit_en" alt="Daily limit" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daily limit</p></div>
@@ -654,6 +654,11 @@ function setLang(lang) {
   if (wi) wi.setAttribute('data-base', wbase);
   var lbwi = document.getElementById('lb-widget-img');
   if (lbwi) lbwi.setAttribute('data-base', wbase);
+  var bbase = lang === 'nl' ? 'screens/ss_blocked_nl' : 'screens/ss_blocked_en';
+  var bi = document.getElementById('hero-blocked-img');
+  if (bi) bi.setAttribute('data-base', bbase);
+  var lbbi = document.getElementById('lb-blocked-img');
+  if (lbbi) lbbi.setAttribute('data-base', bbase);
   applyTheme();
   localStorage.setItem('sc_lang', lang);
 }
