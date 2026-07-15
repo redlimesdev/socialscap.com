@@ -722,6 +722,44 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft') moveLightbox(-1);
   if (e.key === 'ArrowRight') moveLightbox(1);
 });
+
+// --- UTM capture & Play Store referrer forwarding ---
+// Reads utm_source/medium/campaign/content/term from the incoming URL (e.g. from a Meta ad),
+// stores them so they survive on-page navigation, and appends a Google Play "referrer"
+// parameter to every Play Store link so installs show up attributed in Play Console
+// instead of bucketed as organic/unknown.
+(function() {
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var params = new URLSearchParams(window.location.search);
+  var utm = {};
+  var hasNewUtm = false;
+  UTM_KEYS.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { utm[key] = val; hasNewUtm = true; }
+  });
+  if (hasNewUtm) {
+    try { sessionStorage.setItem('sc_utm', JSON.stringify(utm)); } catch (e) {}
+  } else {
+    try {
+      var stored = sessionStorage.getItem('sc_utm');
+      if (stored) utm = JSON.parse(stored);
+    } catch (e) {}
+  }
+  var utmKeysPresent = Object.keys(utm);
+  if (utmKeysPresent.length === 0) return; // nothing to forward (e.g. organic visit)
+
+  var referrerString = utmKeysPresent.map(function(k) {
+    return encodeURIComponent(k) + '=' + encodeURIComponent(utm[k]);
+  }).join('&');
+
+  document.querySelectorAll('a[href*="play.google.com/store/apps/details"]').forEach(function(a) {
+    try {
+      var url = new URL(a.href);
+      url.searchParams.set('referrer', referrerString);
+      a.href = url.toString();
+    } catch (e) {}
+  });
+})();
 </script>
 </body>
 </html>
