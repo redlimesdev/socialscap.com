@@ -105,6 +105,7 @@ body.theme-dark .gp-cta { background: #000; border-color: #000; color: #fff; }
 /* Official badge image (swapped in once you add googleplay-light.png / googleplay-dark.png) */
 .gp-link { display: inline-block; text-decoration: none; }
 .hero .gp-link { align-self: center; }
+.gp-link-top { margin-bottom: 40px; }
 .gp-badge-img { height: 56px; width: auto; display: block; }
 .gp-fallback { display: none; }
 .hero-note { display: block; margin-top: 13px; font-size: 14px; color: var(--muted); align-self: center; text-align: center; }
@@ -310,6 +311,17 @@ span[data-lang] { display: none; }
   <h1>Cap your Socials.</h1>
   <p class="hero-sub" data-lang="en">Get a grip on your time spent on social media.</p>
   <p class="hero-sub" data-lang="nl">Krijg grip op de tijd die je besteedt aan sociale media.</p>
+
+  <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="gp-link gp-link-top" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+    <img class="gp-badge-img" alt="Get it on Google Play">
+    <span class="gp-fallback gp-cta">
+      <svg class="gp-tri" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.83 1-.99 1.45-.45l14 8.5a.5.5 0 010 .9l-14 8.5C3.99 21.5 3 21.33 3 20.5z"/></svg>
+      <span class="gp-label">
+        <span class="gp-top"><span data-lang="en">Get it on</span><span data-lang="nl">Installeer via</span></span>
+        <span class="gp-bot">Google Play</span>
+      </span>
+    </span>
+  </a>
 
   <div class="hero-phones">
     <div class="phone-frame" onclick="openHeroLightbox(0)" role="button" aria-label="View widget screen full size">
