@@ -273,6 +273,8 @@ span[data-lang] { display: none; }
 }
 @media (max-width: 640px) {
   .hero-inner { padding: 48px 20px 52px; }
+  .hero h1 { font-size: clamp(30px, 8.5vw, 42px); }
+  .hero-sub { margin-bottom: 32px; }
   .hero-phones { gap: 14px; }
   .phone-frame { width: 43vw; max-width: 170px; border-radius: 28px; padding: 8px; }
   .phone-frame img { border-radius: 22px; }
@@ -331,17 +333,6 @@ span[data-lang] { display: none; }
       <img id="hero-blocked-img" src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="SocialsCap blocked screen">
     </div>
   </div>
-
-  <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="gp-link" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-    <img class="gp-badge-img" alt="Get it on Google Play">
-    <span class="gp-fallback gp-cta">
-      <svg class="gp-tri" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.83 1-.99 1.45-.45l14 8.5a.5.5 0 010 .9l-14 8.5C3.99 21.5 3 21.33 3 20.5z"/></svg>
-      <span class="gp-label">
-        <span class="gp-top"><span data-lang="en">Get it on</span><span data-lang="nl">Installeer via</span></span>
-        <span class="gp-bot">Google Play</span>
-      </span>
-    </span>
-  </a>
   <span class="hero-note" data-lang="en">Free · No accounts · No data collected · No ads · Android 8+</span>
   <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Geen advertenties · Android 8+</span>
   <div class="recog-research">
