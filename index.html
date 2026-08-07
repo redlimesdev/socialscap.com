@@ -85,8 +85,10 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 /* HERO */
 .hero { border-bottom: 1px solid var(--border); }
 .hero-inner { max-width: 1100px; margin: 0 auto; padding: 88px 40px 80px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
-.hero h1 { font-size: clamp(52px, 6.5vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 22px; }
+.hero h1 { font-size: clamp(52px, 6.5vw, 96px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; margin-bottom: 10px; color: var(--text); }
 .hero-sub { font-size: 17px; color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
+.hero-sub-main { color: var(--blue); font-size: 20px; font-weight: 600; }
+.hero-trust { display: inline-block; margin-top: 10px; color: var(--text); font-weight: 700; }
 .hero-phones { display: flex; gap: 24px; justify-content: center; align-items: flex-start; margin-bottom: 44px; align-self: center; }
 .phone-frame { background: #10151D; border-radius: 36px; box-sizing: border-box; padding: 11px; width: 236px; aspect-ratio: 9 / 19.5; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); flex-shrink: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .phone-frame:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(16,21,29,0.30), 0 8px 24px rgba(16,21,29,0.14); }
@@ -311,8 +313,8 @@ span[data-lang] { display: none; }
 <div class="hero">
 <div class="hero-inner">
   <h1>Cap your Socials.</h1>
-  <p class="hero-sub" data-lang="en">Get a grip on your time spent on social media.</p>
-  <p class="hero-sub" data-lang="nl">Krijg grip op de tijd die je besteedt aan sociale media.</p>
+  <p class="hero-sub" data-lang="en"><span class="hero-sub-main">Get a grip on your time spent on social media.</span><br><span class="hero-trust">Free · No ads · No tracking · No accounts.</span></p>
+  <p class="hero-sub" data-lang="nl"><span class="hero-sub-main">Krijg grip op de tijd die je besteedt aan sociale media.</span><br><span class="hero-trust">Gratis · Geen advertenties · Geen tracking · Geen accounts.</span></p>
 
   <a href="https://play.google.com/store/apps/details?id=com.socialscap.app" class="gp-link gp-link-top" target="_blank" rel="noopener" aria-label="Get it on Google Play">
     <img class="gp-badge-img" alt="Get it on Google Play">
@@ -333,8 +335,8 @@ span[data-lang] { display: none; }
       <img id="hero-widget-img" src="screens/ss_widget_en_light.jpg" data-base="screens/ss_widget_en" alt="SocialsCap home screen widget">
     </div>
   </div>
-  <span class="hero-note" data-lang="en">Free · No accounts · No data collected · No ads · Android 8+</span>
-  <span class="hero-note" data-lang="nl">Gratis · Geen accounts · Geen data verzameld · Geen advertenties · Android 8+</span>
+  <span class="hero-note" data-lang="en">Android 8+</span>
+  <span class="hero-note" data-lang="nl">Android 8+</span>
   <div class="recog-research">
     <p data-lang="en">Social media is designed to be hard to put down — and the research on why is growing.</p>
     <p data-lang="nl">Sociale media is ontworpen om moeilijk los te laten — en het onderzoek naar waarom groeit.</p>
