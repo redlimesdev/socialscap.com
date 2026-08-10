@@ -89,9 +89,9 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .hero-sub { font-size: 17px; color: var(--muted); font-weight: 500; max-width: 560px; line-height: 1.45; margin-bottom: 52px; }
 .hero-sub-main { color: var(--blue); font-size: 17px; font-weight: 600; }
 .hero-trust { display: inline-block; margin-top: 10px; color: var(--text); font-weight: 700; }
-.hero-shot { background: #10151D; border-radius: 36px; box-sizing: border-box; padding: 11px; width: 340px; max-width: 82vw; aspect-ratio: 9 / 10; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin: 0 auto 44px; }
+.hero-shot { background: #10151D; border-radius: 36px; box-sizing: border-box; padding: 11px; width: 236px; aspect-ratio: 9 / 19.5; box-shadow: 0 28px 70px rgba(16,21,29,0.22), 0 6px 20px rgba(16,21,29,0.10); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin: 0 auto 44px; }
 .hero-shot:hover { transform: translateY(-4px); box-shadow: 0 36px 80px rgba(16,21,29,0.30), 0 8px 24px rgba(16,21,29,0.14); }
-.hero-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; border-radius: 27px; }
+.hero-shot img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 27px; transition: opacity 0.4s ease; }
 .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
 /* Google Play badge — swaps black (dark theme) / outlined (light theme) */
@@ -276,7 +276,7 @@ span[data-lang] { display: none; }
   .hero-inner { padding: 48px 20px 52px; }
   .hero h1 { font-size: clamp(38px, 11vw, 56px); font-weight: 800; }
   .hero-sub { margin-bottom: 32px; }
-.hero-shot { width: min(300px, 78vw); }
+.hero-shot { width: 43vw; max-width: 170px; }
   .ill-section { padding: 36px 20px 12px; }
   .ill-stage { height: 260px; }
   .recog-research p, .recog-research a { font-size: 14px; }
@@ -324,8 +324,8 @@ span[data-lang] { display: none; }
     </span>
   </a>
 
-  <div class="hero-shot" onclick="openHeroLightbox(0)" role="button" aria-label="View widget screen full size">
-    <img id="hero-widget-img" src="screens/ss_widget_en_light.jpg" data-base="screens/ss_widget_en" alt="SocialsCap home screen widget">
+  <div class="hero-shot" onclick="openHeroLightbox(heroToggleState === 'blocked' ? 1 : 0)" role="button" aria-label="View screen full size">
+    <img id="hero-toggle-img" src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="SocialsCap blocked screen">
   </div>
   <span class="hero-note" data-lang="en">Android 8+</span>
   <span class="hero-note" data-lang="nl">Android 8+</span>
@@ -441,14 +441,12 @@ span[data-lang] { display: none; }
     <div class="ss-thumb" onclick="openLightbox(1,'en')"><div class="ss-mini"><img src="screens/ss_bedtime_en_light.jpg" data-base="screens/ss_bedtime_en" alt="Bedtime schedule"></div><p class="ss-label">Bedtime schedule</p></div>
     <div class="ss-thumb" onclick="openLightbox(2,'en')"><div class="ss-mini"><img src="screens/ss_limit_en_light.jpg" data-base="screens/ss_limit_en" alt="Daily limit"></div><p class="ss-label">Daily limit</p></div>
     <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><img src="screens/ss_pin_en_light.jpg" data-base="screens/ss_pin_en" alt="PIN access guard"></div><p class="ss-label">PIN access guard (upgrade)</p></div>
-    <div class="ss-thumb" onclick="openLightbox(4,'en')"><div class="ss-mini"><img src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="Blocked screen"></div><p class="ss-label">Blocked screen</p></div>
   </div>
   <div class="ss-grid" data-lang="nl">
     <div class="ss-thumb" onclick="openLightbox(0,'nl')"><div class="ss-mini"><img src="screens/ss_main_nl_light.jpg" data-base="screens/ss_main_nl" alt="Hoofdscherm"></div><p class="ss-label">Hoofdscherm</p></div>
     <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><img src="screens/ss_bedtime_nl_light.jpg" data-base="screens/ss_bedtime_nl" alt="Bedtijdschema"></div><p class="ss-label">Bedtijdschema</p></div>
     <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><img src="screens/ss_limit_nl_light.jpg" data-base="screens/ss_limit_nl" alt="Daglimiet"></div><p class="ss-label">Daglimiet</p></div>
     <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img src="screens/ss_pin_nl_light.jpg" data-base="screens/ss_pin_nl" alt="PIN-toegangsbeveiliging"></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
-    <div class="ss-thumb" onclick="openLightbox(4,'nl')"><div class="ss-mini"><img src="screens/ss_blocked_nl_light.jpg" data-base="screens/ss_blocked_nl" alt="Geblokkeerd scherm"></div><p class="ss-label">Geblokkeerd scherm</p></div>
   </div>
 
   <div class="appearance">
@@ -473,16 +471,15 @@ span[data-lang] { display: none; }
       <p class="lb-caption" data-lang="en">Home screen widget</p>
       <p class="lb-caption" data-lang="nl">Startscherm widget</p>
     </div>
+    <div class="lb-slide" id="lb-hero-1"><img id="lb-blocked-img" src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption" data-lang="en">Blocked screen</p><p class="lb-caption" data-lang="nl">Geblokkeerd scherm</p></div>
     <div class="lb-slide" id="lb-en-0"><img src="screens/ss_main_en_light.jpg" data-base="screens/ss_main_en" alt="Main screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Main screen</p></div>
     <div class="lb-slide" id="lb-en-1"><img src="screens/ss_bedtime_en_light.jpg" data-base="screens/ss_bedtime_en" alt="Bedtime schedule" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtime schedule</p></div>
     <div class="lb-slide" id="lb-en-2"><img src="screens/ss_limit_en_light.jpg" data-base="screens/ss_limit_en" alt="Daily limit" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daily limit</p></div>
     <div class="lb-slide" id="lb-en-3"><img src="screens/ss_pin_en_light.jpg" data-base="screens/ss_pin_en" alt="PIN access guard" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN access guard</p></div>
-    <div class="lb-slide" id="lb-en-4"><img src="screens/ss_blocked_en_light.jpg" data-base="screens/ss_blocked_en" alt="Blocked screen" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Blocked screen</p></div>
     <div class="lb-slide" id="lb-nl-0"><img src="screens/ss_main_nl_light.jpg" data-base="screens/ss_main_nl" alt="Hoofdscherm" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Hoofdscherm</p></div>
     <div class="lb-slide" id="lb-nl-1"><img src="screens/ss_bedtime_nl_light.jpg" data-base="screens/ss_bedtime_nl" alt="Bedtijdschema" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Bedtijdschema</p></div>
     <div class="lb-slide" id="lb-nl-2"><img src="screens/ss_limit_nl_light.jpg" data-base="screens/ss_limit_nl" alt="Daglimiet" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Daglimiet</p></div>
     <div class="lb-slide" id="lb-nl-3"><img src="screens/ss_pin_nl_light.jpg" data-base="screens/ss_pin_nl" alt="PIN-toegangsbeveiliging" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">PIN-toegangsbeveiliging</p></div>
-    <div class="lb-slide" id="lb-nl-4"><img src="screens/ss_blocked_nl_light.jpg" data-base="screens/ss_blocked_nl" alt="Geblokkeerd scherm" onclick="closeLightbox()" style="cursor:zoom-out"><p class="lb-caption">Geblokkeerd scherm</p></div>
   </div>
 </div>
 
@@ -645,15 +642,37 @@ if (window.matchMedia) {
     if (themeMode === 'auto') applyTheme();
   });
 }
+var heroToggleState = 'blocked';
+function heroToggleSwap() {
+  var img = document.getElementById('hero-toggle-img');
+  if (!img) return;
+  var lang = document.body.classList.contains('lang-nl') ? 'nl' : 'en';
+  heroToggleState = heroToggleState === 'blocked' ? 'widget' : 'blocked';
+  var base = heroToggleState === 'blocked' ? 'screens/ss_blocked_' + lang : 'screens/ss_widget_' + lang;
+  var altText = heroToggleState === 'blocked'
+    ? (lang === 'nl' ? 'SocialsCap geblokkeerd scherm' : 'SocialsCap blocked screen')
+    : (lang === 'nl' ? 'SocialsCap widget op startscherm' : 'SocialsCap home screen widget');
+  img.style.opacity = '0';
+  setTimeout(function() {
+    img.setAttribute('data-base', base);
+    img.setAttribute('alt', altText);
+    applyTheme();
+    img.style.opacity = '1';
+  }, 400);
+}
+setInterval(heroToggleSwap, 3000);
 function setLang(lang) {
   document.body.className = 'lang-' + lang;
   var sel = document.getElementById('langSelect');
   if (sel) sel.value = lang;
   var wbase = lang === 'nl' ? 'screens/ss_widget_nl' : 'screens/ss_widget_en';
-  var wi = document.getElementById('hero-widget-img');
-  if (wi) wi.setAttribute('data-base', wbase);
+  var bbase = lang === 'nl' ? 'screens/ss_blocked_nl' : 'screens/ss_blocked_en';
+  var ti = document.getElementById('hero-toggle-img');
+  if (ti) ti.setAttribute('data-base', heroToggleState === 'blocked' ? bbase : wbase);
   var lbwi = document.getElementById('lb-widget-img');
   if (lbwi) lbwi.setAttribute('data-base', wbase);
+  var lbbi = document.getElementById('lb-blocked-img');
+  if (lbbi) lbbi.setAttribute('data-base', bbase);
   applyTheme();
   localStorage.setItem('sc_lang', lang);
 }
@@ -685,7 +704,7 @@ var lbCurrent = 0, lbLang = 'en', lbTotal = 4;
 function openHeroLightbox(n) {
   lbCurrent = n;
   lbLang = 'hero';
-  lbTotal = 1;
+  lbTotal = 2;
   updateLightbox();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -693,7 +712,7 @@ function openHeroLightbox(n) {
 function openLightbox(n, lang) {
   lbCurrent = n;
   lbLang = lang || (document.body.classList.contains('lang-nl') ? 'nl' : 'en');
-  lbTotal = 5;
+  lbTotal = 4;
   updateLightbox();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
