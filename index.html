@@ -91,7 +91,8 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95)
 .hero-trust { display: block; margin-bottom: 8px; color: var(--text); font-weight: 700; align-self: center; text-align: center; }
 .hero-shot { position: relative; width: 340px; max-width: 82vw; aspect-ratio: 1 / 2; margin: 0 auto 44px; cursor: pointer; transition: transform 0.2s; }
 .hero-shot:hover { transform: translateY(-4px); }
-.hero-shot .device-screenshot { position: absolute; top: 4.86%; left: 9.52%; right: 9.42%; bottom: 4.90%; object-fit: cover; display: block; border-radius: 9%; transition: opacity 0.4s ease; }
+.hero-shot .device-screen-crop { position: absolute; top: 4.86%; left: 9.52%; right: 9.42%; bottom: 4.90%; overflow: hidden; border-radius: 9%; }
+.hero-shot .device-screen-crop img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.4s ease; }
 .hero-shot .device-frame-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
 .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: #fff; font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 32px; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 20px rgba(32,103,176,0.28); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
@@ -162,7 +163,8 @@ body.theme-dark .gp-cta { background: #000; border-color: #000; color: #fff; }
 .ss-thumb:hover { transform: translateY(-4px); }
 .ss-mini { position: relative; width: 228px; aspect-ratio: 1 / 2; margin: 0 auto; transition: transform 0.2s; }
 .ss-thumb:hover .ss-mini { transform: translateY(-4px); }
-.ss-mini .device-screenshot { position: absolute; top: 4.86%; left: 9.52%; right: 9.42%; bottom: 4.90%; object-fit: cover; display: block; border-radius: 9%; }
+.ss-mini .device-screen-crop { position: absolute; top: 4.86%; left: 9.52%; right: 9.42%; bottom: 4.90%; overflow: hidden; border-radius: 9%; }
+.ss-mini .device-screen-crop img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ss-mini .device-frame-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
 .ss-label { font-size: 14px; font-weight: 500; color: var(--muted); margin-top: 11px; }
 .appearance { text-align: center; margin-top: 48px; }
@@ -333,7 +335,9 @@ span[data-lang] { display: none; }
   </a>
 
   <div class="hero-shot" onclick="openHeroLightbox(heroToggleState === 'blocked' ? 2 : (heroToggleState === 'full' ? 1 : 0))" role="button" aria-label="View screen full size">
-    <img id="hero-toggle-img" class="device-screenshot" src="screens/ss_widget_en_light.jpg" data-base="screens/ss_widget_en" alt="SocialsCap home screen widget">
+    <div class="device-screen-crop">
+      <img id="hero-toggle-img" src="screens/ss_widget_en_light.jpg" data-base="screens/ss_widget_en" alt="SocialsCap home screen widget">
+    </div>
     <img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt="">
   </div>
   <p class="hero-trust" data-lang="en">Free · No ads · No tracking · No accounts.</p>
@@ -448,16 +452,16 @@ span[data-lang] { display: none; }
   <p class="sec-body" data-lang="nl">Tik op een schermafbeelding voor een grotere weergave.</p>
 
   <div class="ss-grid" data-lang="en">
-    <div class="ss-thumb" onclick="openLightbox(0,'en')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_main_en_light.jpg" data-base="screens/ss_main_en" alt="Main screen"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Main screen</p></div>
-    <div class="ss-thumb" onclick="openLightbox(1,'en')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_bedtime_en_light.jpg" data-base="screens/ss_bedtime_en" alt="Bedtime schedule"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Bedtime schedule</p></div>
-    <div class="ss-thumb" onclick="openLightbox(2,'en')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_limit_en_light.jpg" data-base="screens/ss_limit_en" alt="Daily limit"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Daily limit</p></div>
-    <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_pin_en_light.jpg" data-base="screens/ss_pin_en" alt="PIN access guard"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">PIN access guard (upgrade)</p></div>
+    <div class="ss-thumb" onclick="openLightbox(0,'en')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_main_en_light.jpg" data-base="screens/ss_main_en" alt="Main screen"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Main screen</p></div>
+    <div class="ss-thumb" onclick="openLightbox(1,'en')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_bedtime_en_light.jpg" data-base="screens/ss_bedtime_en" alt="Bedtime schedule"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Bedtime schedule</p></div>
+    <div class="ss-thumb" onclick="openLightbox(2,'en')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_limit_en_light.jpg" data-base="screens/ss_limit_en" alt="Daily limit"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Daily limit</p></div>
+    <div class="ss-thumb" onclick="openLightbox(3,'en')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_pin_en_light.jpg" data-base="screens/ss_pin_en" alt="PIN access guard"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">PIN access guard (upgrade)</p></div>
   </div>
   <div class="ss-grid" data-lang="nl">
-    <div class="ss-thumb" onclick="openLightbox(0,'nl')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_main_nl_light.jpg" data-base="screens/ss_main_nl" alt="Hoofdscherm"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Hoofdscherm</p></div>
-    <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_bedtime_nl_light.jpg" data-base="screens/ss_bedtime_nl" alt="Bedtijdschema"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Bedtijdschema</p></div>
-    <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_limit_nl_light.jpg" data-base="screens/ss_limit_nl" alt="Daglimiet"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Daglimiet</p></div>
-    <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><img class="device-screenshot" src="screens/ss_pin_nl_light.jpg" data-base="screens/ss_pin_nl" alt="PIN-toegangsbeveiliging"><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
+    <div class="ss-thumb" onclick="openLightbox(0,'nl')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_main_nl_light.jpg" data-base="screens/ss_main_nl" alt="Hoofdscherm"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Hoofdscherm</p></div>
+    <div class="ss-thumb" onclick="openLightbox(1,'nl')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_bedtime_nl_light.jpg" data-base="screens/ss_bedtime_nl" alt="Bedtijdschema"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Bedtijdschema</p></div>
+    <div class="ss-thumb" onclick="openLightbox(2,'nl')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_limit_nl_light.jpg" data-base="screens/ss_limit_nl" alt="Daglimiet"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">Daglimiet</p></div>
+    <div class="ss-thumb" onclick="openLightbox(3,'nl')"><div class="ss-mini"><div class="device-screen-crop"><img src="screens/ss_pin_nl_light.jpg" data-base="screens/ss_pin_nl" alt="PIN-toegangsbeveiliging"></div><img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt=""></div><p class="ss-label">PIN-toegangsbeveiliging (upgrade)</p></div>
   </div>
 
   <div class="appearance">
