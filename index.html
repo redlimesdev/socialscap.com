@@ -216,8 +216,10 @@ body.theme-dark .gp-cta { background: #000; border-color: #000; color: #fff; }
 .btn-outline { display: block; text-align: center; border: 1px solid var(--border); color: var(--muted); font-weight: 500; font-size: 15px; padding: 12px 20px; border-radius: 9px; text-decoration: none; margin-top: 22px; transition: all 0.2s; }
 .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
 .pin-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.pin-frame { background: #10151D; border-radius: 26px; padding: 9px; width: 196px; box-shadow: 0 12px 36px rgba(16,21,29,0.18); }
-.pin-frame img { width: 100%; display: block; border-radius: 19px; }
+.pin-frame { position: relative; width: 196px; aspect-ratio: 1 / 2; }
+.pin-frame .device-screen-crop { position: absolute; top: 4.86%; left: 9.52%; right: 9.42%; bottom: 4.90%; overflow: hidden; border-radius: 4.6% / 2.1%; }
+.pin-frame .device-screen-crop img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.pin-frame .device-frame-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
 .pin-col-label { font-size: 13px; font-weight: 500; color: var(--muted); }
 
 /* ANDROID BANNER */
@@ -576,8 +578,11 @@ span[data-lang] { display: none; }
     <!-- PIN SCREEN -->
     <div class="pin-col">
       <div class="pin-frame">
-        <img data-lang="en" src="screens/ss_pin_en_light.jpg" data-base="screens/ss_pin_en" alt="PIN protection screen">
-        <img data-lang="nl" src="screens/ss_pin_nl_light.jpg" data-base="screens/ss_pin_nl" alt="PIN-beveiliging scherm">
+        <div class="device-screen-crop">
+          <img data-lang="en" src="screens/ss_pin_en_light.jpg" data-base="screens/ss_pin_en" alt="PIN protection screen">
+          <img data-lang="nl" src="screens/ss_pin_nl_light.jpg" data-base="screens/ss_pin_nl" alt="PIN-beveiliging scherm">
+        </div>
+        <img class="device-frame-overlay" src="screens/pixel8pro_frame.png" alt="">
       </div>
       <p class="pin-col-label" data-lang="en">PIN access guard</p>
       <p class="pin-col-label" data-lang="nl">PIN-toegangsbeveiliging</p>
